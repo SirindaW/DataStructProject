@@ -146,12 +146,12 @@
 /* navbar */
 
 .logo {
-    width: 5.5%;
+    width: 80px;
 }
 
 .nav-container {
     max-width: 100%;
-    height: 9vh;
+    height: 80px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
@@ -161,32 +161,298 @@
 }
 
 nav {
-    height: 9vh;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav ul {
+.centertab {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* mainpage */
+
+.main-list a {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 500;
+    color: #3E3E3E;
+    text-decoration: none;
+    margin: 3.5vw;
+    font-size: 21px;
+}
+
+
+/* aboutus */
+
+.aboutus-list a {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 500;
+    color: #3E3E3E;
+    text-decoration: none;
+    margin: 3.5vw;
+    font-size: 21px;
+}
+
+
+/* cases */
+
+.cases-list {
+    position: relative;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropbtn-cases a {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 500;
+    color: #3E3E3E;
+    text-decoration: none;
+    margin: 3.5vw;
+    font-size: 21px;
+}
+
+.dropdown-cases-content {
+    display: none;
+    position: absolute;
+    top: 80px;
+    background-color: rgb(223, 223, 223);
+    min-width: 250px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+.dropdown-cases-content a {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    float: none;
+    color: #3E3E3E;
+    font-size: 16px;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-cases-content a:hover {
+    color: #807f7f;
+}
+
+.cases-list:hover .dropdown-cases-content {
+    display: block;
+}
+
+.see-all {
+    font-weight: 500;
+}
+
+
+/* collection */
+
+.collection-list {
+    position: relative;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropbtn-collection a {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 500;
+    color: #3E3E3E;
+    text-decoration: none;
+    margin: 3.5vw;
+    font-size: 21px;
+}
+
+.dropdown-collection-content {
+    display: none;
+    position: absolute;
+    margin-left: 11px;
+    top: 80px;
+    background-color: rgb(223, 223, 223);
+    min-width: 200px;
+    z-index: 1;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.dropdown-collection-content a {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    float: none;
+    color: #3E3E3E;
+    font-size: 16px;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-collection-content a:hover {
+    color: #807f7f;
+}
+
+.collection-list:hover .dropdown-collection-content {
+    display: block;
+}
+
+
+/* Fading animation menubar*/
+
+.fade-menubar {
+    -webkit-animation-name: fade-menubar;
+    -webkit-animation-duration: 0.3s;
+    animation-name: fade-menubar;
+    animation-duration: 0.3s;
+}
+
+@-webkit-keyframes fade-menubar {
+    from {
+        opacity: .3
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade-menubar {
+    from {
+        opacity: .3
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+/* search cart profile */
+
+.righttab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     list-style: none;
 }
 
-.centertab li {
-    margin: 3.5vw;
-}
-
 .righttab li {
+    margin-top: 0;
     margin: 0.7vw;
-    width: 1.5vw;
+    width: 28px;
 }
 
-.centertab li a {
+.cart-image {
+    margin-top: 5px;
+    margin-left: 3px;
+}
+
+.profile-image {
+    margin-top: 3px;
+}
+
+
+/* search */
+
+.search-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 60px;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.search-icon-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.search-icon-wrap::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #3E3E3E;
+    border-radius: 50%;
+    transform: translate(-4px, -4px);
+}
+
+.search-icon-wrap::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    background: #3E3E3E;
+    transform: translate(6px, 6px) rotate(315deg);
+}
+
+.search-icon.search-active {
+    width: 230px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.search-icon .input {
+    position: relative;
+    width: 230px;
+    height: 20px;
+    left: 44px;
+    top: 10px;
+}
+
+.search-icon .input input {
+    position: absolute;
+    width: 65%;
+    height: 100%;
+    border: none;
+    outline: none;
     font-family: 'IBM Plex Sans Thai', sans-serif;
-    font-weight: 500;
-    font-size: 1.1vw;
-    color: #3E3E3E;
-    text-decoration: none;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.clear {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    right: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clear::before {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 12px;
+    background: #999;
+    transform: rotate(45deg);
+}
+
+.clear::after {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 12px;
+    background: #999;
+    transform: rotate(315deg);
 }
 
 
@@ -238,12 +504,12 @@ nav ul {
     transition: background-color 0.6s ease;
 }
 
-.active {
+.dot-active {
     background-color: #717171;
 }
 
 
-/* Fading animation */
+/* Fading animation slide*/
 
 .fade {
     -webkit-animation-name: fade;
@@ -309,7 +575,7 @@ nav ul {
 .aboutus-title {
     font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 700;
-    font-size: 1.1vw;
+    font-size: 21px;
     color: #3E3E3E;
     text-decoration: none;
     margin-top: 1.5vw;
@@ -325,7 +591,7 @@ nav ul {
 .aboutus li a {
     font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 500;
-    font-size: 0.85vw;
+    font-size: 16.4px;
     color: #3E3E3E;
     text-decoration: none;
 }
@@ -338,14 +604,14 @@ nav ul {
 .contact-title {
     font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 700;
-    font-size: 1.1vw;
+    font-size: 21px;
     color: #3E3E3E;
     text-decoration: none;
     margin-top: 1.5vw;
 }
 
 .contact li {
-    width: 2vw;
+    width: 40px;
     margin-left: 0;
     margin-right: 1vw;
     margin-top: 0.6vw;

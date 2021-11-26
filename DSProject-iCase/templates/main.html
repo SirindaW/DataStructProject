@@ -53,44 +53,82 @@
                     <div class="logo">
                         <a href="/"><img src="{%static '/images/logo.svg'%}" style="width:100%"></a>
                     </div>
-                    <ul class="centertab">
-                        <li><a href="/">หน้าหลัก</a></li>
-                        <li><a href="/cases">เคส</a></li>
-                        <li><a href="#">คอลเลคชั่น</a></li>
-                        <li><a href="#">เกี่ยวกับเรา</a></li>
-                    </ul>
+                    <div class="centertab">
+                        <div class="main-list"><a href="/">หน้าหลัก</a></div>
+                        <div class="cases-list">
+                            <div class="dropbtn-cases"><a href="/cases">เคส</a></div>
+                            <div class="dropdown-cases-content fade-menubar">
+                                <a href="#">iPhone 13 Pro Max</a>
+                                <a href="#">iPhone 13 Pro</a>
+                                <a href="#">iPhone 13</a>
+                                <a href="#">iPhone 13 Mini</a>
+                                <a href="#">iPhone 12 Pro Max</a>
+                                <a href="#">iPhone 12 Pro</a>
+                                <a href="#">iPhone 12</a>
+                                <a href="#">iPhone 12 Mini</a>
+                                <a class="see-all" href="#">ดูทั้งหมด</a>
+                            </div>
+                        </div>
+                        <div class="collection-list">
+                            <div class="dropbtn-collection"><a href="/collection">คอลเลคชั่น</a></div>
+                            <div class="dropdown-collection-content fade-menubar">
+                                <a href="#">Van Gogh Museum</a>
+                                <a href="#">One Piece</a>
+                                <a href="#">Harry Potter</a>
+                                <a href="#">Snoopy</a>
+                                <a href="#">PAC-MAN</a>
+                                <a href="#">Cosmos</a>
+                                <a class="see-all" href="#">ดูทั้งหมด</a>
+                            </div>
+                        </div>
+                        <div class="aboutus-list"><a href="#">เกี่ยวกับเรา</a></div>
+                    </div>
                     <ul class="righttab">
                         <li>
-                            <a href="#"><img src="{%static '/images/search.svg'%}" style="width:100%"></a>
+                            <div class="search-icon">
+                                <div class="search-icon-wrap"></div>
+                                <div class="input">
+                                    <input type="text" placeholder="ค้นหา" id="mysearch">
+                                </div>
+                                <span class="clear" onclick="document.getElementById('mysearch').value=''"></span>
+                            </div>
                         </li>
                         <li>
-                            <a href="#"><img src="{%static '/images/cart.svg'%}" style="width:100%"></a>
+                            <a href="#"><img src="{%static '/images/cart.svg'%}" class="cart-image" style="width:100%"></a>
                         </li>
                         <li>
-                            <a href="#"><img src="{%static '/images/profile.svg'%}" style="width:100%"></a>
+                            <a href="#"><img src="{%static '/images/profile.svg'%}" class="profile-image" style="width:100%"></a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </div>
+        <!-- search script -->
+        <script>
+            const icon = document.querySelector('.search-icon-wrap');
+            const search = document.querySelector('.search-icon');
+            icon.onclick = function() {
+                search.classList.toggle('search-active')
+            }
+        </script>
         <!-- SlideShowBody1 -->
         <div class="slideshow-container">
 
             <div class="mySlides fade">
                 <a href="#"><img src="{%static '/images/bgwithphone1.png'%}" style="width:100%">
-                    <div class="text1"><img src="{%static '/images/buynow.svg'%}" style="width:100%"></div>
+                    <div class="text1"><img src="{%static '/images/buynow2.svg'%}" style="width:100%"></div>
                 </a>
             </div>
 
             <div class="mySlides fade">
                 <a href="#"><img src="{%static '/images/bgwithphone2.png'%}" style="width:100%">
-                    <div class="text2"><img src="{%static '/images/buynow.svg'%}" style="width:100%"></div>
+                    <div class="text2"><img src="{%static '/images/buynow2.svg'%}" style="width:100%"></div>
                 </a>
             </div>
 
             <div class="mySlides fade">
                 <a href="#"><img src="{%static '/images/bgwithphone3.png'%}" style="width:100%">
-                    <div class="text3"><img src="{%static '/images/buynow.svg'%}" style="width:100%"></div>
+                    <div class="text3"><img src="{%static '/images/buynow2.svg'%}" style="width:100%"></div>
                 </a>
             </div>
 
@@ -116,7 +154,7 @@
                 <div class="footwrapper">
                     <ul class="aboutus">
                         <h3 class="aboutus-title">เกี่ยวกับเรา</h3>
-                        <ul class="aboutus-list">
+                        <ul class="aboutus-list2">
                             <li><a href="#">เกี่ยวกับเรา</a></li>
                             <li><a href="#">ร้านค้า</a></li>
                         </ul>
@@ -155,10 +193,10 @@
                 slides[i].style.display = "none";
             }
             for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
+                dots[i].className = dots[i].className.replace(" dot-active", "");
             }
             slides[index - 1].style.display = "block";
-            dots[index - 1].className += " active";
+            dots[index - 1].className += " dot-active";
             slideIndex = index;
         }
 
@@ -174,10 +212,10 @@
                 slideIndex = 1
             }
             for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
+                dots[i].className = dots[i].className.replace(" dot-active", "");
             }
             slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
+            dots[slideIndex - 1].className += " dot-active";
             setTimeout(showSlides, 7000); // Change image every 7 seconds
         }
     </script>
