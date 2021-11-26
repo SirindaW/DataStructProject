@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;700&family=Outfit:wght@500&family=Roboto:wght@300;400;500;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* snow effect */
+
+.snowflake {
+    color: #fff;
+    opacity: 0.5;
+    font-size: 1.2vw;
+    font-family: 'Outfit', sans-serif;
+    text-shadow: 0 0 1px #000;
+}
+
+@-webkit-keyframes snowflakes-fall {
+    0% {
+        top: -10%
+    }
+    100% {
+        top: 100%
+    }
+}
+
+@-webkit-keyframes snowflakes-shake {
+    0% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px)
+    }
+    50% {
+        -webkit-transform: translateX(80px);
+        transform: translateX(80px)
+    }
+    100% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px)
+    }
+}
+
+@keyframes snowflakes-fall {
+    0% {
+        top: -10%
+    }
+    100% {
+        top: 100%
+    }
+}
+
+@keyframes snowflakes-shake {
+    0% {
+        transform: translateX(0px)
+    }
+    50% {
+        transform: translateX(80px)
+    }
+    100% {
+        transform: translateX(0px)
+    }
+}
+
+.snowflake {
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+    -webkit-animation-duration: 10s, 3s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state: running, running;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running
+}
+
+.snowflake:nth-of-type(0) {
+    left: 1%;
+    -webkit-animation-delay: 0s, 0s;
+    animation-delay: 0s, 0s
+}
+
+.snowflake:nth-of-type(1) {
+    left: 10%;
+    -webkit-animation-delay: 1s, 1s;
+    animation-delay: 1s, 1s
+}
+
+.snowflake:nth-of-type(2) {
+    left: 20%;
+    -webkit-animation-delay: 6s, .5s;
+    animation-delay: 6s, .5s
+}
+
+.snowflake:nth-of-type(3) {
+    left: 30%;
+    -webkit-animation-delay: 4s, 2s;
+    animation-delay: 4s, 2s
+}
+
+.snowflake:nth-of-type(4) {
+    left: 40%;
+    -webkit-animation-delay: 2s, 2s;
+    animation-delay: 2s, 2s
+}
+
+.snowflake:nth-of-type(5) {
+    left: 50%;
+    -webkit-animation-delay: 8s, 3s;
+    animation-delay: 8s, 3s
+}
+
+.snowflake:nth-of-type(6) {
+    left: 60%;
+    -webkit-animation-delay: 6s, 2s;
+    animation-delay: 6s, 2s
+}
+
+.snowflake:nth-of-type(7) {
+    left: 70%;
+    -webkit-animation-delay: 2.5s, 1s;
+    animation-delay: 2.5s, 1s
+}
+
+.snowflake:nth-of-type(8) {
+    left: 80%;
+    -webkit-animation-delay: 1s, 0s;
+    animation-delay: 1s, 0s
+}
+
+.snowflake:nth-of-type(9) {
+    left: 90%;
+    -webkit-animation-delay: 3s, 1.5s;
+    animation-delay: 3s, 1.5s
+}
+
+
+/* navbar */
+
+.logo {
+    width: 5.5%;
+}
+
+.nav-container {
+    max-width: 100%;
+    height: 9vh;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+nav {
+    height: 9vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.centertab li {
+    margin: 3.5vw;
+}
+
+.righttab li {
+    margin: 0.7vw;
+    width: 1.5vw;
+}
+
+.centertab li a {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 500;
+    font-size: 1.1vw;
+    color: #3E3E3E;
+    text-decoration: none;
+}
+
+
+/* bodyy1 */
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+
+/* Caption text */
+
+.text1 {
+    position: absolute;
+    width: 7%;
+    left: 30%;
+    top: 60%;
+}
+
+.text2 {
+    position: absolute;
+    width: 7%;
+    left: 22%;
+    top: 65%;
+}
+
+.text3 {
+    position: absolute;
+    width: 7%;
+    left: 67%;
+    top: 49%;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    height: 0.6vw;
+    width: 0.6vw;
+    margin: 0 0.1vw;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #717171;
+}
+
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+/* body */
+
+.bdcontainer {
+    max-width: 100%;
+    background: #E3E3E3;
+    margin: auto;
+}
+
+.body2 {
+    max-width: 100%;
+    margin: auto;
+}
+
+.body3 {
+    max-width: 80%;
+    margin: auto;
+}
+
+
+/* footer */
+
+.footer-container {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    max-width: 100%;
+    height: 20vh;
+    background-color: #D3D3D3;
+}
+
+.footwrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 35%;
+    margin: 0 auto;
+}
+
+.aboutus-title {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 700;
+    font-size: 1.1vw;
+    color: #3E3E3E;
+    text-decoration: none;
+    margin-top: 1.5vw;
+    margin-bottom: 0.7vw;
+}
+
+.aboutus li {
+    margin-left: 0;
+    margin-top: 0.15vw;
+    list-style: none;
+}
+
+.aboutus li a {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 500;
+    font-size: 0.85vw;
+    color: #3E3E3E;
+    text-decoration: none;
+}
+
+.contact ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-title {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 700;
+    font-size: 1.1vw;
+    color: #3E3E3E;
+    text-decoration: none;
+    margin-top: 1.5vw;
+}
+
+.contact li {
+    width: 2vw;
+    margin-left: 0;
+    margin-right: 1vw;
+    margin-top: 0.6vw;
+    list-style: none;
+}

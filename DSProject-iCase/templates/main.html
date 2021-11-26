@@ -1,0 +1,186 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCase</title>
+
+    <link rel="stylesheet" href="{%static '/css/main.css'%}">
+</head>
+
+<body>
+    <!-- snoweffect -->
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+    </div>
+    <!-- header nav bar -->
+    <header>
+        <div class="nav-container">
+            <div class="wrapper">
+                <nav>
+                    <div class="logo">
+                        <a href="/"><img src="{%static '/images/logo.svg'%}" style="width:100%"></a>
+                    </div>
+                    <ul class="centertab">
+                        <li><a href="/">หน้าหลัก</a></li>
+                        <li><a href="/cases">เคส</a></li>
+                        <li><a href="#">คอลเลคชั่น</a></li>
+                        <li><a href="#">เกี่ยวกับเรา</a></li>
+                    </ul>
+                    <ul class="righttab">
+                        <li>
+                            <a href="#"><img src="{%static '/images/search.svg'%}" style="width:100%"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{%static '/images/cart.svg'%}" style="width:100%"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="{%static '/images/profile.svg'%}" style="width:100%"></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- SlideShowBody1 -->
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <a href="#"><img src="{%static '/images/bgwithphone1.png'%}" style="width:100%">
+                    <div class="text1"><img src="{%static '/images/buynow.svg'%}" style="width:100%"></div>
+                </a>
+            </div>
+
+            <div class="mySlides fade">
+                <a href="#"><img src="{%static '/images/bgwithphone2.png'%}" style="width:100%">
+                    <div class="text2"><img src="{%static '/images/buynow.svg'%}" style="width:100%"></div>
+                </a>
+            </div>
+
+            <div class="mySlides fade">
+                <a href="#"><img src="{%static '/images/bgwithphone3.png'%}" style="width:100%">
+                    <div class="text3"><img src="{%static '/images/buynow.svg'%}" style="width:100%"></div>
+                </a>
+            </div>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </header>
+    <br>
+    <section class="bdcontainer">
+        <div class="body-container">
+            <div class="body2">
+                <a href="#"><img src="{%static '/images/bodybg2.svg'%}" style="width:100%"></a>
+            </div>
+            <div class="body3">
+                <a href="#"><img src="{%static '/images/bodybg3.svg'%}" style="width:100%"></a>
+            </div>
+            <div class="footer-container">
+                <div class="footwrapper">
+                    <ul class="aboutus">
+                        <h3 class="aboutus-title">เกี่ยวกับเรา</h3>
+                        <ul class="aboutus-list">
+                            <li><a href="#">เกี่ยวกับเรา</a></li>
+                            <li><a href="#">ร้านค้า</a></li>
+                        </ul>
+                    </ul>
+                    <ul class="contact">
+                        <h3 class="contact-title">ติดตามเรา</h3>
+                        <ul class="contact-list">
+                            <li>
+                                <a href="#"><img src="{%static '/images/iconIG.svg'%}" style="width:100%"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{%static '/images/iconFB.svg'%}" style="width:100%"></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{%static '/images/iconTW.svg'%}" style="width:100%"></a>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+        var slides, dots;
+
+        function currentSlide(index) {
+            if (index > slides.length) {
+                index = 1
+            } else if (index < 1) {
+                index = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[index - 1].style.display = "block";
+            dots[index - 1].className += " active";
+            slideIndex = index;
+        }
+
+        function showSlides() {
+            var i;
+            slides = document.getElementsByClassName("mySlides");
+            dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 7000); // Change image every 7 seconds
+        }
+    </script>
+</body>
+
+</html>
