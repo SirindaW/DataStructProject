@@ -7,3 +7,6 @@ def home_view(request,*args,**kwargs):
 
 def cases_view(request,*args,**kwargs):
     return render(request,"cases.html",{})
+
+def collection_view(request,*args,**kwargs):
+    return render(request,"collection.html",{})

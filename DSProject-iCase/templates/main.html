@@ -12,39 +12,6 @@
 </head>
 
 <body>
-    <!-- snoweffect -->
-    <div class="snowflakes" aria-hidden="true">
-        <div class="snowflake">
-            .
-        </div>
-        <div class="snowflake">
-            .
-        </div>
-        <div class="snowflake">
-            .
-        </div>
-        <div class="snowflake">
-            .
-        </div>
-        <div class="snowflake">
-            .
-        </div>
-        <div class="snowflake">
-            .
-        </div>
-        <div class="snowflake">
-            .
-        </div>
-        <div class="snowflake">
-            .
-        </div>
-        <div class="snowflake">
-            .
-        </div>
-        <div class="snowflake">
-            .
-        </div>
-    </div>
     <!-- header nav bar -->
     <header>
         <div class="nav-container">
@@ -66,7 +33,7 @@
                                 <a href="#">iPhone 12 Pro</a>
                                 <a href="#">iPhone 12</a>
                                 <a href="#">iPhone 12 Mini</a>
-                                <a class="see-all" href="#">ดูทั้งหมด</a>
+                                <a class="see-all" href="/cases">ดูทั้งหมด</a>
                             </div>
                         </div>
                         <div class="collection-list">
@@ -78,7 +45,7 @@
                                 <a href="#">Snoopy</a>
                                 <a href="#">PAC-MAN</a>
                                 <a href="#">Cosmos</a>
-                                <a class="see-all" href="#">ดูทั้งหมด</a>
+                                <a class="see-all" href="/collection">ดูทั้งหมด</a>
                             </div>
                         </div>
                         <div class="aboutus-list"><a href="#">เกี่ยวกับเรา</a></div>
@@ -128,38 +95,41 @@
                 search.classList.toggle('search-active')
             }
         </script>
-        <!-- SlideShowBody1 -->
-        <div class="slideshow-container">
-
-            <div class="mySlides fade">
-                <a href="#"><img src="{%static '/images/bgwithphone1.png'%}" style="width:100%">
-                    <div class="text1"><img src="{%static '/images/buynow2.svg'%}" style="width:100%"></div>
-                </a>
-            </div>
-
-            <div class="mySlides fade">
-                <a href="#"><img src="{%static '/images/bgwithphone2.png'%}" style="width:100%">
-                    <div class="text2"><img src="{%static '/images/buynow2.svg'%}" style="width:100%"></div>
-                </a>
-            </div>
-
-            <div class="mySlides fade">
-                <a href="#"><img src="{%static '/images/bgwithphone3.png'%}" style="width:100%">
-                    <div class="text3"><img src="{%static '/images/buynow2.svg'%}" style="width:100%"></div>
-                </a>
-            </div>
-
-        </div>
-        <br>
-
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
     </header>
+    <!-- SlideShowBody -->
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <a href="#"><img src="{%static '/images/bgwithphone1.png'%}" style="width:100%">
+                <div class="text1"><img src="{%static '/images/buynow2.svg'%}" style="width:100%"></div>
+            </a>
+        </div>
+
+        <div class="mySlides fade">
+            <a href="#"><img src="{%static '/images/bgwithphone2.png'%}" style="width:100%">
+                <div class="text2"><img src="{%static '/images/buynow2.svg'%}" style="width:100%"></div>
+            </a>
+        </div>
+
+        <div class="mySlides fade">
+            <a href="#"><img src="{%static '/images/bgwithphone3.png'%}" style="width:100%">
+                <div class="text3"><img src="{%static '/images/buynow2.svg'%}" style="width:100%"></div>
+            </a>
+        </div>
+
+    </div>
     <br>
-    <section class="bdcontainer">
+
+    <!-- dot -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <br>
+
+    <!-- body2 -->
+    <div class="bdcontainer">
         <div class="body-container">
             <div class="body2">
                 <a href="#"><img src="{%static '/images/bodybg2.svg'%}" style="width:100%"></a>
@@ -167,36 +137,69 @@
             <div class="body3">
                 <a href="#"><img src="{%static '/images/bodybg3.svg'%}" style="width:100%"></a>
             </div>
-
-            <!-- footer -->
-            <div class="footer-container">
-                <div class="footwrapper">
-                    <ul class="aboutus">
-                        <h3 class="aboutus-title">เกี่ยวกับเรา</h3>
-                        <ul class="aboutus-list2">
-                            <li><a href="#">เกี่ยวกับเรา</a></li>
-                            <li><a href="#">ร้านค้า</a></li>
-                        </ul>
-                    </ul>
-                    <ul class="contact">
-                        <h3 class="contact-title">ติดตามเรา</h3>
-                        <ul class="contact-list">
-                            <li>
-                                <a href="#"><img src="{%static '/images/iconIG.svg'%}" style="width:100%"></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{%static '/images/iconFB.svg'%}" style="width:100%"></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="{%static '/images/iconTW.svg'%}" style="width:100%"></a>
-                            </li>
-                        </ul>
-                    </ul>
-                </div>
-            </div>
         </div>
-    </section>
+    </div>
 
+    <!-- footer -->
+    <div class="footer-container">
+        <div class="footwrapper">
+            <ul class="aboutus">
+                <h3 class="aboutus-title">เกี่ยวกับเรา</h3>
+                <ul class="aboutus-list2">
+                    <li><a href="#">เกี่ยวกับเรา</a></li>
+                    <li><a href="#">ร้านค้า</a></li>
+                </ul>
+            </ul>
+            <ul class="contact">
+                <h3 class="contact-title">ติดตามเรา</h3>
+                <ul class="contact-list">
+                    <li>
+                        <a href="#"><img src="{%static '/images/iconIG.svg'%}" style="width:100%"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{%static '/images/iconFB.svg'%}" style="width:100%"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{%static '/images/iconTW.svg'%}" style="width:100%"></a>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+
+    <!-- snoweffect -->
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+        <div class="snowflake">
+            .
+        </div>
+    </div>
     <script>
         var slideIndex = 0;
         showSlides();

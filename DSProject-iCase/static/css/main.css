@@ -442,6 +442,180 @@ nav {
 }
 
 
+/* cases page body */
+
+
+/* header */
+
+.cases-page-body-container {
+    max-width: 100%;
+    background: white;
+    margin: auto;
+}
+
+.cases-page-body-container .wrapper {
+    max-width: 80%;
+    margin: auto;
+}
+
+.cases-page-body-header {
+    height: 140px;
+}
+
+.cases-page-body-header .header-title {
+    height: 100px;
+    margin-top: 40px;
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+    color: #3E3E3E;
+}
+
+.cases-page-body-header .header-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.allproduct-text {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 400;
+    font-size: 17.5px;
+    color: #3E3E3E;
+}
+
+
+/* sort */
+
+.dropbtn-sort {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 400;
+    font-size: 17.5px;
+    color: #3E3E3E;
+}
+
+.name-sort,
+.price-sort {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 400;
+    font-size: 15.5px;
+    color: #3E3E3E;
+    padding: 5px 5px;
+}
+
+.name-sort-to a,
+.price-sort-to a {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #3E3E3E;
+    padding: 0px 8px;
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+.name-sort-to a:hover,
+.price-sort-to a:hover {
+    color: #807f7f;
+}
+
+.sort-container {
+    cursor: pointer;
+}
+
+.dropdown-sort {
+    display: none;
+    position: absolute;
+    background-color: rgb(226, 226, 226);
+    min-width: 100px;
+    z-index: 1;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.show {
+    display: block;
+}
+
+
+/* sort name */
+
+.name-sort-to {
+    display: none;
+    position: absolute;
+    list-style: none;
+    margin-left: 100px;
+    top: 0;
+    background-color: rgb(226, 226, 226);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    min-width: 100px;
+    z-index: 1;
+}
+
+.name-sort-container:hover .name-sort-to {
+    display: block;
+}
+
+
+/* sort price */
+
+.price-sort-to {
+    display: none;
+    position: absolute;
+    list-style: none;
+    margin-left: 100px;
+    top: 43px;
+    background-color: rgb(226, 226, 226);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    min-width: 100px;
+    z-index: 1;
+}
+
+.price-sort-container:hover .price-sort-to {
+    display: list-item;
+}
+
+
+/* sidebar */
+
+.cases-page-body-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar {
+    width: 20%;
+}
+
+.iphone-list a {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: #3E3E3E;
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+.iphone-list a:hover {
+    color: #807f7f;
+}
+
+.iphone-list {
+    margin-bottom: 20px;
+    top: 0;
+}
+
+.cases-product-showcase {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: 0 0 0 4vw;
+    row-gap: 45px;
+    width: 80%;
+}
+
+.cases-product-showcase .cases-product {}
+
+
 /* footer */
 
 .footer-container {
@@ -480,6 +654,11 @@ nav {
     font-size: 16.4px;
     color: #3E3E3E;
     text-decoration: none;
+    transition: all .2s ease;
+}
+
+.aboutus-list2 li :hover {
+    color: #807f7f;
 }
 
 .contact ul {
@@ -502,6 +681,14 @@ nav {
     margin-right: 1vw;
     margin-top: 0.6vw;
     list-style: none;
+}
+
+.contact-list li {
+    transition: all .2s ease;
+}
+
+.contact-list li:hover {
+    filter: brightness(130%);
 }
 
 
