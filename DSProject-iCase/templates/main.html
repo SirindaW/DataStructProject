@@ -83,23 +83,40 @@
                         </div>
                         <div class="aboutus-list"><a href="#">เกี่ยวกับเรา</a></div>
                     </div>
-                    <ul class="righttab">
-                        <li>
-                            <div class="search-icon">
-                                <div class="search-icon-wrap"></div>
-                                <div class="input">
-                                    <input type="text" placeholder="ค้นหา" id="mysearch">
-                                </div>
-                                <span class="clear" onclick="document.getElementById('mysearch').value=''"></span>
+                    <div class="righttab">
+                        <div class="search-icon">
+                            <div class="search-icon-wrap"></div>
+                            <div class="input">
+                                <input type="text" placeholder="ค้นหา" id="mysearch">
                             </div>
-                        </li>
-                        <li>
-                            <a href="#"><img src="{%static '/images/cart.svg'%}" class="cart-image" style="width:100%"></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="{%static '/images/profile.svg'%}" class="profile-image" style="width:100%"></a>
-                        </li>
-                    </ul>
+                            <span class="clear" onclick="document.getElementById('mysearch').value=''"></span>
+                        </div>
+                        <div class="cart-list">
+                            <div class="cartbtn">
+                                <div class="cart-count-container">
+                                    <div class="cart-count">#</div>
+                                </div>
+                                <a href="#"><img src="{%static '/images/cart.svg'%}" style="width:100%"></a>
+                            </div>
+                            <div class="dropdown-cart-content fade-menubar">
+                                <div class="cart-title">สินค้าในตะกร้าของคุณ</div>
+                                <div class="cart-bought">
+                                    <ul>
+                                        <li></li>
+                                    </ul>
+                                    <div class="buy-container">
+                                        <div class="price">สินค้าในตะกร้าของคุณ<br>ทั้งหมด # บาท</div>
+                                        <div class="buy">
+                                            <a href="#">ชำระเงิน</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-icon">
+                            <a href="#"><img src="{%static '/images/profile.svg'%}" style="width:100%"></a>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </div>

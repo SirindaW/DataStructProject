@@ -171,6 +171,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    left: 28%;
 }
 
 
@@ -183,6 +185,11 @@ nav {
     text-decoration: none;
     margin: 3.5vw;
     font-size: 21px;
+    transition: all .3s ease;
+}
+
+.main-list a:hover {
+    color: #FFA92E;
 }
 
 
@@ -195,6 +202,11 @@ nav {
     text-decoration: none;
     margin: 3.5vw;
     font-size: 21px;
+    transition: all .3s ease;
+}
+
+.aboutus-list a:hover {
+    color: #FFA92E;
 }
 
 
@@ -215,6 +227,11 @@ nav {
     text-decoration: none;
     margin: 3.5vw;
     font-size: 21px;
+    transition: all .3s ease;
+}
+
+.dropbtn-cases a:hover {
+    color: #FFA92E;
 }
 
 .dropdown-cases-content {
@@ -268,6 +285,11 @@ nav {
     text-decoration: none;
     margin: 3.5vw;
     font-size: 21px;
+    transition: all .3s ease;
+}
+
+.dropbtn-collection a:hover {
+    color: #FFA92E;
 }
 
 .dropdown-collection-content {
@@ -276,7 +298,7 @@ nav {
     margin-left: 11px;
     top: 80px;
     background-color: rgb(223, 223, 223);
-    min-width: 200px;
+    min-width: 250px;
     z-index: 1;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
@@ -335,22 +357,111 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    list-style: none;
 }
 
-.righttab li {
-    margin-top: 0;
-    margin: 0.7vw;
-    width: 28px;
+
+/* cart */
+
+.cart-list {
+    margin-top: 0.1vw;
+    margin-left: 0.6vw;
+    height: 80px;
+    width: 50px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.cart-image {
-    margin-top: 5px;
-    margin-left: 3px;
+.cart-count-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFA92E;
+    right: 18px;
+    top: 18px;
+    height: 15px;
+    width: 15px;
+    border-radius: 60px;
 }
 
-.profile-image {
-    margin-top: 3px;
+.cart-count {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+}
+
+.dropdown-cart-content {
+    display: none;
+    position: absolute;
+    top: 79px;
+    right: 0;
+    padding: 8px 5px;
+    background-color: rgb(223, 223, 223);
+    min-width: 370px;
+    z-index: 1;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.cart-title {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    color: #3E3E3E;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    text-align: left;
+}
+
+.cart-bought {
+    border-top: 0.1px solid #47474746;
+    padding: 8px 5px;
+    background-color: rgb(223, 223, 223);
+    width: 370px;
+    z-index: 1;
+}
+
+.cart-bought ul li {
+    height: 60px;
+    border-bottom: 0.1px solid #47474746;
+}
+
+.buy-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+}
+
+.price {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    color: #3E3E3E;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.buy {
+    height: 30px;
+    width: 150px;
+    background-color: rgb(56, 56, 56);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buy a {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-size: 17px;
+    color: #FFA92E;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.cart-list:hover .dropdown-cart-content {
+    display: block;
 }
 
 
@@ -505,7 +616,7 @@ nav {
 }
 
 .dot-active {
-    background-color: #717171;
+    background-color: #FFA92E;
 }
 
 
