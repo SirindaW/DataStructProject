@@ -28,39 +28,116 @@
             </div>
         </div>
         <div class="cases-page-body-body">
+            <!-- sidebar -->
             <div class="sidebar">
-                <div class="iphone-list">
-                    <a href="#">iPhone 13 Pro Max</a><br>
-                    <a href="#">iPhone 13 Pro</a><br>
-                    <a href="#">iPhone 13</a><br>
-                    <a href="#">iPhone 13 Mini</a><br>
-                    <a href="#">iPhone 12 Pro Max</a><br>
-                    <a href="#">iPhone 12 Pro</a><br>
-                    <a href="#">iPhone 12</a><br>
-                    <a href="#">iPhone 12 Mini</a><br>
-                    <a href="#">iPhone 11 Pro Max</a><br>
-                    <a href="#">iPhone 11 Pro</a><br>
-                    <a href="#">iPhone 11</a><br>
-                    <a href="#">iPhone XS Max</a><br>
-                    <a href="#">iPhone XS</a><br>
-                    <a href="#">iPhone XR</a><br>
-                    <a href="#">iPhone X</a><br>
-                    <a href="#">iPhone SE</a><br>
-                    <a href="/cases">ดูทั้งหมด</a>
+                <div class="sidebar-iphone">
+                    <div class="iphone-list">
+                        <a href="#">iPhone 13 Pro Max</a><br>
+                        <a href="#">iPhone 13 Pro</a><br>
+                        <a href="#">iPhone 13</a><br>
+                        <a href="#">iPhone 13 Mini</a><br>
+                        <a href="#">iPhone 12 Pro Max</a><br>
+                        <a href="#">iPhone 12 Pro</a><br>
+                        <a href="#">iPhone 12</a><br>
+                        <a href="#">iPhone 12 Mini</a><br>
+                        <a href="#">iPhone 11 Pro Max</a><br>
+                        <a href="#">iPhone 11 Pro</a><br>
+                        <a href="#">iPhone 11</a><br>
+                        <a href="#">iPhone XS Max</a><br>
+                        <a href="#">iPhone XS</a><br>
+                        <a href="#">iPhone XR</a><br>
+                        <a href="#">iPhone X</a><br>
+                        <a href="#">iPhone SE</a><br>
+                        <a href="/cases">ดูทั้งหมด</a>
+                    </div>
                 </div>
-                <!-- maybe collection list -->
+                <div class="sidebar-collection">
+                    <div class="title">คอลเลคชั่น</div>
+                    <div class="collection-filter">
+                        <div class="filter">
+                            <input type="checkbox" id=collect-vangogh>
+                            <label for="collect-vangogh">Van Gogh Museum</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=collect-onepiece>
+                            <label for="collect-onepiece">One Piece</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=collect-harry>
+                            <label for="collect-harry">Harry Potter</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=collect-snoopy>
+                            <label for="collect-snoopy">Snoopy</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=collect-pacman>
+                            <label for="collect-pacman">PAC-MAN</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=collect-cosmos>
+                            <label for="collect-cosmos">Cosmos</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=collect-doodle>
+                            <label for="collect-doodle">ilovedoodle</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=collect-lol>
+                            <label for="collect-lol">League of Legends</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=collect-pewdie>
+                            <label for="collect-pewdie">PewDiePie</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=collect-keith>
+                            <label for="collect-keith">Keith Haring</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-price">
+                    <div class="title">ราคา</div>
+                    <div class="price-filter">
+
+                        <div class="filter">
+                            <input type="checkbox" id=price0-100>
+                            <label for="collect-vangogh">0-100 ฿</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=price101-200>
+                            <label for="collect-onepiece">101-200 ฿</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=price201-300>
+                            <label for="collect-harry">201-300 ฿</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=price301-400>
+                            <label for="collect-snoopy">301-400 ฿</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=price401up>
+                            <label for="collect-pacman">> 401 ฿</label>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="cases-product-showcase">
 
                 {%for obj in allproducts%}
 
-                <a href="product/{{obj.slug}}">
-                    <div class="cases-product">
-                        <div class="cases-image"><img src="{{obj.image.url}}" width=65% alt=""></div>
-                        <div class="cases-name">{{obj.title}}</div>
-                        <div class="cases-price">{{obj.price}}</div>
-                    </div>
-                </a>
+                <div class="cases-product">
+                    <a href="product/{{obj.slug}}">
+                        <div class="cases-image"><img src="{{obj.image.url}}" class="product-image" width=100% alt=""></div>
+                        <div class="detail">
+                            <!-- name and model switch -->
+                            <div class="cases-model">{{obj.title}}</div>
+                            <div class="cases-name">iPhone 13 Pro Max</div>
+                            <div class="cases-price">{{obj.price}} ฿</div>
+                        </div>
+                    </a>
+                </div>
 
                 {%endfor%}
             </div>

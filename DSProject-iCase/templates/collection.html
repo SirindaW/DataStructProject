@@ -28,32 +28,63 @@
         </div>
         <div class="cases-page-body-body">
             <div class="sidebar">
-                <div class="iphone-list">
-                    <a href="#">Van Gogh Museum</a><br>
-                    <a href="#">One Piece</a><br>
-                    <a href="#">Harry Potter</a><br>
-                    <a href="#">Snoopy</a><br>
-                    <a href="#">PAC-MAN</a><br>
-                    <a href="#">Cosmos</a><br>
-                    <a href="#">ilovedoodle</a><br>
-                    <a href="#">League of Legends</a><br>
-                    <a href="#">PewDiePie</a><br>
-                    <a href="#">Keith Haring</a><br>
-                    <a href="/cases/collection">ดูทั้งหมด</a>
+                <div class="sidebar-iphone">
+                    <div class="iphone-list">
+                        <a href="#">Van Gogh Museum</a><br>
+                        <a href="#">One Piece</a><br>
+                        <a href="#">Harry Potter</a><br>
+                        <a href="#">Snoopy</a><br>
+                        <a href="#">PAC-MAN</a><br>
+                        <a href="#">Cosmos</a><br>
+                        <a href="#">ilovedoodle</a><br>
+                        <a href="#">League of Legends</a><br>
+                        <a href="#">PewDiePie</a><br>
+                        <a href="#">Keith Haring</a><br>
+                        <a href="/cases/collection">ดูทั้งหมด</a>
+                    </div>
                 </div>
-                <!-- maybe collection list -->
+                <div class="sidebar-price">
+                    <div class="title">ราคา</div>
+                    <div class="price-filter">
+
+                        <div class="filter">
+                            <input type="checkbox" id=price0-100>
+                            <label for="collect-vangogh">0-100 ฿</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=price101-200>
+                            <label for="collect-onepiece">101-200 ฿</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=price201-300>
+                            <label for="collect-harry">201-300 ฿</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=price301-400>
+                            <label for="collect-snoopy">301-400 ฿</label>
+                        </div>
+                        <div class="filter">
+                            <input type="checkbox" id=price401up>
+                            <label for="collect-pacman">> 401 ฿</label>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="cases-product-showcase">
 
                 {%for obj in allproducts%}
 
-                <a href="/cases/product/{{obj.slug}}">
-                    <div class="cases-product">
-                        <div class="cases-image"><img src="{{obj.image.url}}" alt="" width=65%></div>
-                        <div class="cases-name">{{obj.title}}</div>
-                        <div class="cases-price">{{obj.price}}</div>
-                    </div>
-                </a>
+                <div class="cases-product">
+                    <a href="product/{{obj.slug}}">
+                        <div class="cases-image"><img src="{{obj.image.url}}" class="product-image" width=100% alt=""></div>
+                        <div class="detail">
+                            <!-- name and model switch -->
+                            <div class="cases-model">{{obj.title}}</div>
+                            <div class="cases-name">iPhone 13 Pro Max</div>
+                            <div class="cases-price">{{obj.price}} ฿</div>
+                        </div>
+                    </a>
+                </div>
 
                 {%endfor%}
 

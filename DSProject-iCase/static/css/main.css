@@ -79,6 +79,7 @@ nav {
     text-decoration: none;
     display: block;
     text-align: left;
+    transition: all .2s ease;
 }
 
 
@@ -580,6 +581,7 @@ nav {
 .cases-page-body-body {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 50px;
 }
 
 .sidebar {
@@ -600,20 +602,288 @@ nav {
 }
 
 .iphone-list {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.sidebar-iphone,
+.sidebar-collection,
+.sidebar-price {
+    border-bottom: 1px solid rgba(71, 71, 71, 0.26);
+    padding: 10px 0px;
     top: 0;
 }
 
+.sidebar-collection .title,
+.sidebar-price .title {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 400;
+    font-size: 17.5px;
+    color: #3E3E3E;
+}
+
+
+/* sidebar collection and price filter*/
+
+.collection-filter,
+.price-filter {
+    padding: 10px 0px;
+}
+
+.filter {
+    padding: 3px 0px;
+}
+
+.filter label {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: #3E3E3E;
+}
+
+.filter input[type="checkbox"] {
+    /* change "blue" browser chrome to yellow */
+    cursor: pointer;
+    filter: hue-rotate(195deg) brightness(150%);
+}
+
+
+/* case product  */
+
 .cases-product-showcase {
     display: grid;
-    grid-template-rows: auto;
+    grid-template-rows: min-content;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     padding: 0 0 0 4vw;
-    row-gap: 45px;
+    row-gap: 30px;
+    column-gap: 30px;
     width: 80%;
 }
 
-.cases-product-showcase .cases-product {}
+.cases-product {
+    width: 100%;
+    height: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+.cases-product a {
+    text-decoration: none;
+}
+
+.cases-model {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #3E3E3E;
+    text-align: center;
+    transition: all .2s ease;
+}
+
+.cases-name {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #666666;
+    text-align: center;
+    transition: all .2s ease;
+}
+
+.cases-price {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #3E3E3E;
+    text-align: center;
+}
+
+.cases-model:hover {
+    color: #807f7f;
+}
+
+
+/* detail page body */
+
+.detail-body-container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    margin-bottom: 50px;
+}
+
+.detail-body-container .wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+
+/* back button */
+
+.back-btn {
+    margin-top: 20px;
+}
+
+.back-btn a {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: none;
+    color: #3E3E3E;
+    transition: all .2s ease;
+}
+
+.back-btn a:hover {
+    filter: brightness(170%)
+}
+
+
+/* name and price detail */
+
+.name-price {
+    margin-top: 60px;
+    margin-right: 100px;
+    width: 300px;
+}
+
+.detail-cases-detail {
+    display: block;
+}
+
+.detail-cases-detail .case-name {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: #3E3E3E;
+}
+
+.detail-cases-detail .case-model {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 400;
+    font-size: 23px;
+    color: #3E3E3E;
+    margin-top: 10px;
+}
+
+.detail-cases-detail .case-price {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 500;
+    font-size: 21px;
+    color: #3E3E3E;
+    margin-top: 8px;
+}
+
+
+/* quantity button  */
+
+.quantity-container {
+    margin-top: 80px;
+}
+
+.quantity-container .title {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #3E3E3E;
+}
+
+input,
+textarea {
+    border: 1px solid #eeeeee;
+    box-sizing: border-box;
+    margin: 0;
+    outline: none;
+    padding: 10px;
+}
+
+input[type="button"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.input-group {
+    clear: both;
+    margin: 9px 0;
+    position: relative;
+}
+
+.input-group input[type='button'] {
+    background-color: #eeeeee;
+    min-width: 38px;
+    width: auto;
+    transition: all 300ms ease;
+}
+
+.input-group .button-minus,
+.input-group .button-plus {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 400;
+    height: 38px;
+    padding: 0;
+    width: 38px;
+    position: relative;
+}
+
+.input-group .quantity-field {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 500;
+    position: relative;
+    height: 38px;
+    left: -6px;
+    text-align: center;
+    width: 62px;
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 0 5px;
+    resize: vertical;
+}
+
+.button-plus {
+    left: -13px;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+}
+
+
+/* add to cart button */
+
+.addtocart {
+    margin-top: 30px;
+}
+
+.addtocart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    border: 3px solid #838383;
+    width: 200px;
+}
+
+.addtocart-container a {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    padding: 3px 3px;
+    color: #6d6d6d;
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+.addtocart-container a:hover {
+    color: #FFA92E;
+}
 
 
 /* footer */
@@ -959,6 +1229,73 @@ nav {
     .contact li {
         width: 20px;
     }
+    /* cases page body */
+    /* header */
+    .cases-page-body-header {
+        height: 90px;
+    }
+    .cases-page-body-header .header-title {
+        height: 60px;
+        font-size: 25px;
+    }
+    .allproduct-text {
+        font-size: 14px;
+    }
+    /* sort */
+    .dropbtn-sort {
+        font-size: 14px;
+    }
+    .name-sort,
+    .price-sort {
+        font-size: 12px;
+        padding: 4px 4px;
+    }
+    .name-sort-to a,
+    .price-sort-to a {
+        font-size: 12px;
+    }
+    .dropdown-sort {
+        box-shadow: none;
+    }
+    /* sort name */
+    .name-sort-to {
+        display: block;
+        margin-left: 0;
+        box-shadow: none;
+        min-width: 100px;
+    }
+    /* sort price */
+    .price-sort-to {
+        display: block;
+        margin-left: 0;
+        top: 40px;
+        box-shadow: none;
+        min-width: 100px;
+        z-index: 1;
+    }
+    /* sidebar */
+    .iphone-list a {
+        font-size: 12px;
+    }
+    .sidebar-collection .title,
+    .sidebar-price .title {
+        font-size: 14px;
+    }
+    /* sidebar collection and price filter*/
+    .filter label {
+        font-size: 12px;
+    }
+    /* case product  */
+    .cases-product-showcase {
+        grid-template-rows: min-content;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .cases-name {
+        font-size: 15px;
+    }
+    .cases-price {
+        font-size: 12px;
+    }
 }
 
 @media (min-width:769px) and (max-width: 1436px) {
@@ -986,5 +1323,10 @@ nav {
     }
     .contact li {
         width: 22px;
+    }
+    /* case product  */
+    .cases-product-showcase {
+        grid-template-rows: min-content;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }

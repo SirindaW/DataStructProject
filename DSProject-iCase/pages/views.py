@@ -8,3 +8,6 @@ def home_view(request, *args, **kwargs):
 
 def test_view(request):
     return render(request, 'base.html')
+
+def login_view(request):
+    return render(request, 'login.html')

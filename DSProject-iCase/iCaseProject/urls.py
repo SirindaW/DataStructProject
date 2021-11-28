@@ -14,5 +14,6 @@ urlpatterns = [
     # path("collection/",page.collection_view),
 
     path('test/',page.test_view),
+    path('login/',page.login_view)
 
 ]+ static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

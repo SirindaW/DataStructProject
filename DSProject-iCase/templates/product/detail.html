@@ -1,10 +1,66 @@
  {%extends 'base.html'%} {%load static%} {%block content%}
 
-<h1>This is the PRODUCT page</h1> <br>
 
-<img src="{{obj.image.url}}" width=75% alt="">
 
-<p>Title : {{obj.title}}</p>
-<p>Price : {{obj.price}}</p>
+<div class="detail-body-container">
+    <div class="wrapper">
+        <div class="back-btn">
+            <a href="/cases">◀ ย้อนกลับ</a>
+        </div>
+        <div class="detail-cases-image"><img src="{{obj.image.url}}" width=100% alt=""></div>
+        <div class="detail-cases-detail">
+            <div class="name-price">
+                <div class="case-name">{{obj.title}}</div>
+                <div class="case-model">iPhone 13 Pro Max</div>
+                <div class="case-price">{{obj.price}} ฿</div>
+            </div>
+            <!-- quantity button -->
+            <div class="quantity-container">
+                <div class="title">จำนวนสินค้า :</div>
+                <div class="input-group">
+                    <input type="button" value="-" class="button-minus" data-field="quantity">
+                    <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
+                    <input type="button" value="+" class="button-plus" data-field="quantity">
+                </div>
+            </div>
+            <div class="addtocart">
+                <div class="addtocart-container">
+                    <a href="#">เพิ่มลงตะกร้า</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var buttonSlt = '[data-minus-qtt], [data-plus-qtt]',
+        buttonElm = $(buttonSlt);
+
+    $(document).on('click', buttonSlt, function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var self = $(this),
+            input = $('.quantity input[name="quantity"]').not('.item-quantity').not('.custom-input-quantity'),
+            oldVal = parseInt(input.val()),
+            newVal = 1;
+
+        switch (true) {
+            case (self.hasClass('plus')):
+                {
+                    newVal = oldVal + 1;
+                    break;
+                }
+            case (self.hasClass('minus') && oldVal > 1):
+                {
+                    newVal = oldVal - 1;
+                    break;
+                }
+        }
+
+        input.val(newVal);
+        updatePricing();
+
+    });
+</script>
 
 {%endblock%}
