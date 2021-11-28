@@ -1,0 +1,10 @@
+ {%extends 'base.html'%} {%load static%} {%block content%}
+
+<h1>This is the PRODUCT page</h1> <br>
+
+<img src="{{obj.image.url}}" width=75% alt="">
+
+<p>Title : {{obj.title}}</p>
+<p>Price : {{obj.price}}</p>
+
+{%endblock%}

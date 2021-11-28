@@ -1,0 +1,133 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCase</title>
+
+    <link rel="stylesheet" href="{%static '/css/main.css'%}">
+</head>
+
+<body>
+    <!-- header nav bar -->
+    <header>
+        <div class="nav-container">
+            <div class="wrapper">
+                <nav>
+                    <div class="logo">
+                        <a href="/"><img src="{%static '/images/logo.svg'%}" style="width:100%"></a>
+                    </div>
+                    <div class="centertab">
+                        <div class="main-list"><a href="/">หน้าหลัก</a></div>
+                        <div class="cases-list">
+                            <div class="dropbtn-cases"><a href="/cases">เคส</a></div>
+                            <div class="dropdown-cases-content fade-menubar">
+                                <a href="#">iPhone 13 Pro Max</a>
+                                <a href="#">iPhone 13 Pro</a>
+                                <a href="#">iPhone 13</a>
+                                <a href="#">iPhone 13 Mini</a>
+                                <a href="#">iPhone 12 Pro Max</a>
+                                <a href="#">iPhone 12 Pro</a>
+                                <a href="#">iPhone 12</a>
+                                <a href="#">iPhone 12 Mini</a>
+                                <a class="see-all" href="/cases">ดูทั้งหมด</a>
+                            </div>
+                        </div>
+                        <div class="collection-list">
+                            <div class="dropbtn-collection"><a href="/cases/collection">คอลเลคชั่น</a></div>
+                            <div class="dropdown-collection-content fade-menubar">
+                                <a href="#">Van Gogh Museum</a>
+                                <a href="#">One Piece</a>
+                                <a href="#">Harry Potter</a>
+                                <a href="#">Snoopy</a>
+                                <a href="#">PAC-MAN</a>
+                                <a href="#">Cosmos</a>
+                                <a class="see-all" href="/collection">ดูทั้งหมด</a>
+                            </div>
+                        </div>
+                        <div class="aboutus-list"><a href="#">เกี่ยวกับเรา</a></div>
+                    </div>
+                    <div class="righttab">
+                        <div class="search-icon">
+                            <div class="search-icon-wrap"></div>
+                            <div class="input">
+                                <input type="text" placeholder="ค้นหา" id="mysearch">
+                            </div>
+                            <span class="clear" onclick="document.getElementById('mysearch').value=''"></span>
+                        </div>
+                        <div class="cart-list">
+                            <div class="cartbtn">
+                                <div class="cart-count-container">
+                                    <div class="cart-count">#</div>
+                                </div>
+                                <a href="#"><img src="{%static '/images/cart.svg'%}" class="cart-image"></a>
+                            </div>
+                            <div class="dropdown-cart-content fade-menubar">
+                                <div class="cart-title">สินค้าในตะกร้าของคุณ</div>
+                                <div class="cart-bought">
+                                    <ul>
+                                        <li></li>
+                                    </ul>
+                                    <div class="buy-container">
+                                        <div class="price">สินค้าในตะกร้าของคุณ<br>ทั้งหมด # บาท</div>
+                                        <div class="buy">
+                                            <a href="#">ชำระเงิน</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-icon">
+                            <a href="#"><img src="{%static '/images/profile.svg'%}" class="profile-image"></a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- search script -->
+        <script>
+            const icon = document.querySelector('.search-icon-wrap');
+            const search = document.querySelector('.search-icon');
+            icon.onclick = function() {
+                search.classList.toggle('search-active')
+            }
+        </script>
+    </header>
+
+
+    {% block content %} {% endblock %}
+
+    <!-- footer -->
+    <div class="footer-container">
+        <div class="footwrapper">
+            <ul class="aboutus">
+                <h3 class="aboutus-title">เกี่ยวกับเรา</h3>
+                <ul class="aboutus-list2">
+                    <li><a href="#">เกี่ยวกับเรา</a></li>
+                    <li><a href="#">ร้านค้า</a></li>
+                </ul>
+            </ul>
+            <ul class="contact">
+                <h3 class="contact-title">ติดตามเรา</h3>
+                <ul class="contact-list">
+                    <li>
+                        <a href="#"><img src="{%static '/images/iconIG.svg'%}" style="width:100%"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{%static '/images/iconFB.svg'%}" style="width:100%"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{%static '/images/iconTW.svg'%}" style="width:100%"></a>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+</body>
+
+
+</html>
