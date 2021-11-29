@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load static %}{% block content %}
 <!-- body -->
 <div class="cases-page-body-container">
     <div class="wrapper">
@@ -129,8 +129,9 @@
 
                 <div class="cases-product">
                     <a href="product/{{obj.slug}}">
-                        <div class="cases-image"><img src="{{obj.image.url}}" class="product-image" width=100% alt="">
+                        <div class="cases-image"><img src="{% if obj.image %}{{obj.image.url}}{%endif%}" class="product-image" width=100% alt="">
                         </div>
+
                         <div class="detail">
                             <!-- name and model switch -->
                             <div class="cases-model">{{obj.title}}</div>
