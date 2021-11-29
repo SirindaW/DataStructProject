@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.deletion import SET_NULL
 from django.urls import reverse
 from django.utils.text import slugify
 
@@ -29,10 +30,10 @@ class Product(models.Model):
     title = models.CharField(max_length=400)
     image = models.ImageField(
         upload_to="product_imgs", blank=True, null=True)
-    detail = models.TextField(default='')
+    detail = models.TextField(default='',null=True,blank=True)
     price = models.DecimalField(decimal_places=2, max_digits=10000)
-    model = models.ForeignKey(IphoneModel, on_delete=models.CASCADE)
-    collection = models.ForeignKey(CollectionFeature, on_delete=models.CASCADE,blank=True,null=True)
+    model = models.ForeignKey(IphoneModel,on_delete=SET_NULL,null=True) 
+    collection = models.ForeignKey(CollectionFeature,on_delete=SET_NULL, blank=True,null=True)
     slug = models.SlugField(unique = True)
 
     class Meta:

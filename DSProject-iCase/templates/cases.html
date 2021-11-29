@@ -12,15 +12,15 @@
                         <div class="name-sort-container">
                             <div class="name-sort">ชื่อสินค้า ▸</div>
                             <div class="name-sort-to">
-                                <a href="?alpha-order=asc">A to Z</a><br>
-                                <a href="?alpha-order=desc">Z to A</a>
+                                <a href="" onclick="href_query_filter('order','alpha-asc')" id='alpha-asc-filter'>A to Z</a><br>
+                                <a href="" onclick="href_query_filter('order','alpha-desc')" id='alpha-desc-filter'>Z to A</a>
                             </div>
                         </div>
                         <div class="price-sort-container">
                             <div class="price-sort">ราคา ▸</div>
                             <div class="price-sort-to">
-                                <a href="?price-order=asc">น้อย ไป มาก</a><br>
-                                <a href="?price-order=desc">มาก ไป น้อย</a>
+                                <a href="" onclick="href_query_filter('order','price-asc')" id='price-asc-filter'>น้อย ไป มาก</a><br>
+                                <a href="" onclick="href_query_filter('order','price-desc')" id='price-desc-filter'>มาก ไป น้อย</a>
                             </div>
                         </div>
                     </div>
@@ -32,22 +32,22 @@
             <div class="sidebar">
                 <div class="sidebar-iphone">
                     <div class="iphone-list">
-                        <a href="#">iPhone 13 Pro Max</a><br>
-                        <a href="#">iPhone 13 Pro</a><br>
-                        <a href="#">iPhone 13</a><br>
-                        <a href="#">iPhone 13 Mini</a><br>
-                        <a href="#">iPhone 12 Pro Max</a><br>
-                        <a href="#">iPhone 12 Pro</a><br>
-                        <a href="#">iPhone 12</a><br>
-                        <a href="#">iPhone 12 Mini</a><br>
-                        <a href="#">iPhone 11 Pro Max</a><br>
-                        <a href="#">iPhone 11 Pro</a><br>
-                        <a href="#">iPhone 11</a><br>
-                        <a href="#">iPhone XS Max</a><br>
-                        <a href="#">iPhone XS</a><br>
-                        <a href="#">iPhone XR</a><br>
-                        <a href="#">iPhone X</a><br>
-                        <a href="#">iPhone SE</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone13promax')" id='iphone13promax-filter'>iPhone 13 Pro Max</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone13pro')" id='iphone13pro-filter'>iPhone 13 Pro</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone13')" id=iphone13-filter>iPhone 13</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone13mini')" id=iphone13mini-filter>iPhone 13 Mini</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone12promax')" id=iphone12promax-filter>iPhone 12 Pro Max</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone12pro')" id=iphone12pro-filter>iPhone 12 Pro</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone12')" id=iphone12-filter>iPhone 12</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone12mini')" id='iphone12mini-filter'>iPhone 12 Mini</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone11promax')" id='iphone11promax-filter'>iPhone 11 Pro Max</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone11pro')" id='iphone11pro-filter'>iPhone 11 Pro</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone11')" id='iphone11-filter'>iPhone 11</a><br>
+                        <a href="" onclick="href_query_filter('model','iphonexsmax')" id='iphonexsmax-filter'>iPhone XS Max</a><br>
+                        <a href="" onclick="href_query_filter('model','iphonexs')" id='iphonexs-filter'>iPhone XS</a><br>
+                        <a href="" onclick="href_query_filter('model','iphonexr')" id='iphonexr-filter'>iPhone XR</a><br>
+                        <a href="" onclick="href_query_filter('model','iphonex')" id='iphonex-filter'>iPhone X</a><br>
+                        <a href="" onclick="href_query_filter('model','iphonese')" id='iphonese-filter'>iPhone SE</a><br>
                         <a href="/cases">ดูทั้งหมด</a>
                     </div>
                 </div>
@@ -129,11 +129,12 @@
 
                 <div class="cases-product">
                     <a href="product/{{obj.slug}}">
-                        <div class="cases-image"><img src="{{obj.image.url}}" class="product-image" width=100% alt=""></div>
+                        <div class="cases-image"><img src="{{obj.image.url}}" class="product-image" width=100% alt="">
+                        </div>
                         <div class="detail">
                             <!-- name and model switch -->
                             <div class="cases-model">{{obj.title}}</div>
-                            <div class="cases-name">iPhone 13 Pro Max</div>
+                            <div class="cases-name">{{obj.model}}</div>
                             <div class="cases-price">{{obj.price}} ฿</div>
                         </div>
                     </a>
@@ -162,6 +163,36 @@
                 }
             }
         }
+    }
+
+
+    // Filter 
+    function href_query_filter(parameter, value) { // type is query set key, filter is new query value to replace
+        // Get current url
+        var url = window.location.href;
+
+        // Create new queryset incase of query never existed
+        var qs = [parameter, '=', value].join('');
+        var result;
+        if (url.indexOf('?') > -1) { // check if query has happened before
+            if (url.includes(parameter)) {
+                // already has existed type in queryset
+                var regex = new RegExp('(' + parameter + '=)[^\&]+');
+                result = url.replace(regex, '$1' + value);
+                //result = url.replace(type_key, '$1' + filter);
+            } else {
+                // else this type has never existed
+                result = [url, '&', qs].join('');
+            }
+
+        } else {
+            var result = ['?', qs].join('');
+
+        }
+        id = [value, '-filter'].join('')
+            //alert(id);
+        document.getElementById(id).href = result
+
     }
 </script>
 

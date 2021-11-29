@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from .models import Product
 from django.http import Http404
 from django.core.exceptions import ObjectDoesNotExist
@@ -74,7 +74,8 @@ def product_test_filter(request):
 
 
 def product_detail_view(request, product_slug):
-    obj = Product.objects.get(slug=product_slug)
+    # obj = Product.objects.get(slug=product_slug)
+    obj = get_object_or_404(Product,slug=product_slug)
 
     context = {'obj': obj}
 
