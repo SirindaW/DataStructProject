@@ -18,9 +18,9 @@
             <div class="quantity-container">
                 <div class="title">จำนวนสินค้า :</div>
                 <div class="input-group">
-                    <input type="button" value="-" class="button-minus" data-field="quantity">
-                    <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
-                    <input type="button" value="+" class="button-plus" data-field="quantity">
+                    <input type="button" onclick="decrement()" value="-" class="button-minus">
+                    <input type="number" id="items-quantity" value="1" class="quantity-field">
+                    <input type="button" onclick="increment()" value="+" class="button-plus">
                 </div>
             </div>
             <div class="addtocart">
@@ -32,35 +32,28 @@
     </div>
 </div>
 <script>
-    var buttonSlt = '[data-minus-qtt], [data-plus-qtt]',
-        buttonElm = $(buttonSlt);
-
-    $(document).on('click', buttonSlt, function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        var self = $(this),
-            input = $('.quantity input[name="quantity"]').not('.item-quantity').not('.custom-input-quantity'),
-            oldVal = parseInt(input.val()),
-            newVal = 1;
-
-        switch (true) {
-            case (self.hasClass('plus')):
-                {
-                    newVal = oldVal + 1;
-                    break;
-                }
-            case (self.hasClass('minus') && oldVal > 1):
-                {
-                    newVal = oldVal - 1;
-                    break;
-                }
+    function decrement() {
+        var data = parseInt(document.getElementById("items-quantity").value);
+        if (data > 1) {
+            data = data - 1;
+        } else {
+            data = 1;
         }
+        document.getElementById("items-quantity").value = data;
+    }
 
-        input.val(newVal);
-        updatePricing();
+    function increment() {
+        var data = parseInt(document.getElementById("items-quantity").value);
+        data = data + 1;
+        document.getElementById("items-quantity").value = data;
+    }
 
-    });
+    window.onclick = function(event) {
+        var data = parseInt(document.getElementById("items-quantity").value);
+        if (data < 1) {
+            document.getElementById("items-quantity").value = 1;
+        }
+    }
 </script>
 
 {%endblock%}

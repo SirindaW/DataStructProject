@@ -1291,10 +1291,66 @@ input[type="number"] {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .cases-name {
-        font-size: 15px;
+        font-size: 12px;
+    }
+    .cases-model {
+        font-size: 14px;
     }
     .cases-price {
         font-size: 12px;
+    }
+    /* detail page body */
+    /* back button */
+    .back-btn {
+        width: 30%;
+    }
+    .back-btn a {
+        font-size: 13px;
+    }
+    /* name and price detail */
+    .name-price {
+        margin-top: 25px;
+        width: 110px;
+    }
+    .detail-cases-detail .case-name {
+        font-size: 20px;
+    }
+    .detail-cases-detail .case-model {
+        font-size: 13px;
+    }
+    .detail-cases-detail .case-price {
+        font-size: 11px;
+    }
+    /* quantity button  */
+    .quantity-container {
+        margin-top: 25px;
+    }
+    .quantity-container .title {
+        font-size: 12px;
+    }
+    .input-group input[type='button'] {
+        min-width: 19px;
+    }
+    .input-group .button-minus,
+    .input-group .button-plus {
+        height: 19px;
+        width: 19px;
+    }
+    .input-group .quantity-field {
+        height: 19px;
+        width: 31px;
+        font-size: 10px;
+    }
+    /* add to cart button */
+    .addtocart {
+        margin-top: 0;
+    }
+    .addtocart-container {
+        width: 150px;
+    }
+    .addtocart-container a {
+        font-size: 15px;
+        color: #FFA92E;
     }
 }
 
