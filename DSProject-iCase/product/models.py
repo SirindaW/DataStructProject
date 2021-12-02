@@ -21,6 +21,11 @@ class IphoneModel(models.Model):
     def __str__(self):
         return self.title
 
+    def is_model(self,o):
+        if o.lower().replace(' ','') == str(self.title).replace(' ','').lower():
+            return True
+        return False
+
 class CollectionFeature(models.Model):
     title = models.CharField(max_length=400)
     def __str__(self) :

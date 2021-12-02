@@ -7,40 +7,53 @@ from DS.sorting import sort_by_price, sort_by_alphabet
 
 # Create your views here.
 
-def filter_below_price(data, price):
-    result = []
-    for d in data:
-        # Check compare value here.
-        value = d.price
-        if value <= price:
-            result.append(d)
-
-    return result
-
-
 def product_view(request):
 
-    allproducts = Product.objects.all()
+    # for k in request.GET:
+    #     print(k,request.GET[k])
 
-    if request.GET.get('price-order'):
-        if request.GET.get('price-order') == "asc":
+    # Model Filter
+    if request.GET.get('model'):
+        allproducts = []
+        for k in Product.objects.all():
+            if k.model.is_model(request.GET.get('model')):
+                allproducts.append(k)
+    else:
+        allproducts = Product.objects.all()
+
+
+    # Order options
+    mode = {}
+    if request.GET.get('order'):
+
+        # sort by price
+        if request.GET.get('order') == "price-asc":
+            mode = dict.fromkeys(['price'],True)
             rev = False
-        elif request.GET.get('price-order') == "desc":
+        elif request.GET.get('order') == "price-desc":
+            mode = dict.fromkeys(['price'],True)
             rev = True
 
-        allproducts = sort_by_price(allproducts, rev)
-
-    if request.GET.get('alpha-order'):
-        if request.GET.get('alpha-order') == "asc":
-            rev = False
-        elif request.GET.get('alpha-order') == "desc":
+        # sort by alphabet 
+        if request.GET.get('order') == "alpha-asc":
+            mode = dict.fromkeys(['alpha'],True)
+            mode.fromkeys(['alpha'])
+            rev= False
+        elif request.GET.get('order') == "alpha-desc":
+            mode = dict.fromkeys(['alpha'],True)
+            mode.fromkeys(['alpha'])
             rev = True
 
-        allproducts = sort_by_alphabet(allproducts, rev)
+    if mode.get('price'):
+        allproducts = sort_by_price(allproducts,rev)
+    elif mode.get('alpha'):
+        allproducts = sort_by_alphabet(allproducts,rev)
+
 
     context = {
         'allproducts': allproducts
     }
+
     return render(request, 'cases.html', context)
 
 
