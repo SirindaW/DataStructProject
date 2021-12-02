@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'IBM Plex Sans Thai', sans-serif;
 }
 
 
@@ -20,7 +21,7 @@
 
 .wrapper {
     max-width: 80%;
-    margin: 0 auto;
+    margin: auto;
 }
 
 nav {
@@ -45,7 +46,6 @@ nav {
 .aboutus-list a,
 .dropbtn-cases a,
 .dropbtn-collection a {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 500;
     color: #3E3E3E;
     text-decoration: none;
@@ -71,7 +71,6 @@ nav {
 
 .dropdown-cases-content a,
 .dropdown-collection-content a {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     float: none;
     color: #3E3E3E;
     font-size: 16px;
@@ -95,10 +94,6 @@ nav {
     z-index: 1;
 }
 
-.cases-list:hover .dropdown-cases-content {
-    display: block;
-}
-
 
 /* collection dropdown*/
 
@@ -113,6 +108,7 @@ nav {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
+.cases-list:hover .dropdown-cases-content,
 .collection-list:hover .dropdown-collection-content {
     display: block;
 }
@@ -210,7 +206,6 @@ nav {
 }
 
 .cart-title {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     color: #3E3E3E;
     padding: 8px 16px;
     font-size: 16px;
@@ -240,7 +235,6 @@ nav {
 }
 
 .price {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     color: #3E3E3E;
     font-size: 14px;
     font-weight: 500;
@@ -257,7 +251,6 @@ nav {
 }
 
 .buy a {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-size: 17px;
     color: #FFA92E;
     text-decoration: none;
@@ -334,7 +327,6 @@ nav {
     height: 100%;
     border: none;
     outline: none;
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 400;
     font-size: 17px;
 }
@@ -450,13 +442,6 @@ nav {
 
 .cases-page-body-container {
     max-width: 100%;
-    background: white;
-    margin: auto;
-}
-
-.cases-page-body-container .wrapper {
-    max-width: 80%;
-    margin: auto;
 }
 
 .cases-page-body-header {
@@ -466,7 +451,6 @@ nav {
 .cases-page-body-header .header-title {
     height: 100px;
     margin-top: 40px;
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 700;
     font-size: 34px;
     color: #3E3E3E;
@@ -479,7 +463,6 @@ nav {
 }
 
 .allproduct-text {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 400;
     font-size: 17.5px;
     color: #3E3E3E;
@@ -489,24 +472,29 @@ nav {
 /* sort */
 
 .dropbtn-sort {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 400;
     font-size: 17.5px;
     color: #3E3E3E;
 }
 
 .name-sort,
-.price-sort {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
+.price-sort,
+.latest-sort {
+    text-decoration: none;
     font-weight: 400;
     font-size: 15.5px;
     color: #3E3E3E;
     padding: 5px 5px;
 }
 
+.latest-sort a {
+    text-decoration: none;
+    color: #3E3E3E;
+    transition: all .2s ease;
+}
+
 .name-sort-to a,
 .price-sort-to a {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 400;
     font-size: 15px;
     color: #3E3E3E;
@@ -516,7 +504,8 @@ nav {
 }
 
 .name-sort-to a:hover,
-.price-sort-to a:hover {
+.price-sort-to a:hover,
+.latest-sort a:hover {
     color: #807f7f;
 }
 
@@ -545,15 +534,11 @@ nav {
     position: absolute;
     list-style: none;
     margin-left: 100px;
-    top: 0;
+    top: 39px;
     background-color: rgb(226, 226, 226);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     min-width: 100px;
     z-index: 1;
-}
-
-.name-sort-container:hover .name-sort-to {
-    display: block;
 }
 
 
@@ -564,15 +549,16 @@ nav {
     position: absolute;
     list-style: none;
     margin-left: 100px;
-    top: 43px;
+    top: 76px;
     background-color: rgb(226, 226, 226);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     min-width: 100px;
     z-index: 1;
 }
 
+.name-sort-container:hover .name-sort-to,
 .price-sort-container:hover .price-sort-to {
-    display: list-item;
+    display: block;
 }
 
 
@@ -589,7 +575,6 @@ nav {
 }
 
 .iphone-list a {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 500;
     font-size: 17px;
     color: #3E3E3E;
@@ -615,7 +600,6 @@ nav {
 
 .sidebar-collection .title,
 .sidebar-price .title {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 400;
     font-size: 17.5px;
     color: #3E3E3E;
@@ -634,7 +618,6 @@ nav {
 }
 
 .filter label {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 500;
     font-size: 17px;
     color: #3E3E3E;
@@ -674,7 +657,6 @@ nav {
 }
 
 .cases-model {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 500;
     font-size: 18px;
     color: #3E3E3E;
@@ -683,7 +665,6 @@ nav {
 }
 
 .cases-name {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: #666666;
@@ -692,7 +673,6 @@ nav {
 }
 
 .cases-price {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 400;
     font-size: 15px;
     color: #3E3E3E;
@@ -707,9 +687,7 @@ nav {
 /* detail page body */
 
 .detail-body-container {
-    margin-right: auto;
-    margin-left: auto;
-    width: 80%;
+    width: 100%;
     margin-bottom: 50px;
 }
 
@@ -717,7 +695,6 @@ nav {
     margin-top: 20px;
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
 }
 
 
@@ -728,7 +705,6 @@ nav {
 }
 
 .back-btn a {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 500;
     font-size: 18px;
     text-decoration: none;
@@ -754,14 +730,12 @@ nav {
 }
 
 .detail-cases-detail .case-name {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 700;
     font-size: 30px;
     color: #3E3E3E;
 }
 
 .detail-cases-detail .case-model {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 400;
     font-size: 23px;
     color: #3E3E3E;
@@ -769,7 +743,6 @@ nav {
 }
 
 .detail-cases-detail .case-price {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 500;
     font-size: 21px;
     color: #3E3E3E;
@@ -784,14 +757,14 @@ nav {
 }
 
 .quantity-container .title {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: #3E3E3E;
 }
 
-input,
-textarea {
+.quantity-field,
+.button-minus,
+.button-plus {
     border: 1px solid #eeeeee;
     box-sizing: border-box;
     margin: 0;
@@ -800,7 +773,6 @@ textarea {
 }
 
 input[type="button"] {
-    -webkit-appearance: button;
     cursor: pointer;
 }
 
@@ -824,7 +796,6 @@ input::-webkit-inner-spin-button {
 
 .input-group .button-minus,
 .input-group .button-plus {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 400;
     height: 38px;
     padding: 0;
@@ -833,7 +804,6 @@ input::-webkit-inner-spin-button {
 }
 
 .input-group .quantity-field {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 500;
     position: relative;
     height: 38px;
@@ -848,11 +818,6 @@ input::-webkit-inner-spin-button {
 
 .button-plus {
     left: -13px;
-}
-
-input[type="number"] {
-    -moz-appearance: textfield;
-    -webkit-appearance: none;
 }
 
 
@@ -872,7 +837,6 @@ input[type="number"] {
 }
 
 .addtocart-container a {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 700;
     font-size: 19px;
     padding: 3px 3px;
@@ -882,6 +846,241 @@ input[type="number"] {
 }
 
 .addtocart-container a:hover {
+    color: #FFA92E;
+}
+
+
+/* login page */
+
+
+/* all */
+
+.login-page-container {
+    max-width: 100%;
+}
+
+.login-page-container .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 0;
+}
+
+.login-wrapper {
+    border-right: solid 1px #d8d8d8;
+    width: 50%;
+    justify-content: center;
+    padding: 60px;
+    margin: auto;
+}
+
+.panel-login .title,
+.panel-signup .title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 21px;
+    color: #3E3E3E;
+}
+
+
+/* login zone */
+
+.panel-login {
+    width: 350px;
+    margin: auto;
+}
+
+.login-form-container {
+    padding: 10px;
+}
+
+.forgot-password {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.forgot-password a {
+    font-weight: 500;
+    font-size: 15px;
+    color: #3E3E3E;
+}
+
+.login-form-input {
+    font-weight: 400;
+    font-size: 15px;
+    width: 100%;
+    height: 40px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.login-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3E3E3E;
+    border-radius: 30px;
+    width: 200px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+    transition: all .2s ease;
+    padding: 14px 20px;
+    cursor: pointer;
+    border: none;
+    margin: auto;
+}
+
+.login-btn:hover {
+    color: #FFA92E;
+}
+
+
+/* signup zone */
+
+.signup-wrapper {
+    width: 50%;
+    justify-content: center;
+    padding: 60px;
+    margin: auto;
+}
+
+.signup-btn-wrapper {
+    width: 200px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.signup-btn-wrapper a {
+    text-decoration: none;
+}
+
+.signup-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3E3E3E;
+    border-radius: 30px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+    transition: all .2s ease;
+}
+
+.signup-btn:hover {
+    color: #FFA92E;
+}
+
+
+/* signup page */
+
+.signup-page-container {
+    max-width: 100%;
+}
+
+.signup-page-container .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.signup-form {
+    width: 700px;
+}
+
+.form-row-2col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* title */
+
+.form-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 22px;
+    color: #3E3E3E;
+    margin-bottom: 30px;
+}
+
+
+/* form signup */
+
+.form-row-2col .form-group1 {
+    width: 50%;
+    margin-right: 30px;
+}
+
+.form-row-2col .form-group2 {
+    width: 50%;
+}
+
+.form-group-confirm {
+    margin-top: 15px;
+}
+
+.form-row {
+    margin: 20px 0;
+}
+
+.form__input {
+    font-weight: 400;
+    font-size: 17px;
+    width: 100%;
+    height: 50px;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.form__label {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.form-row-login a {
+    font-weight: 500;
+    font-size: 16px;
+    color: #3E3E3E;
+}
+
+.form-row-login {
+    font-weight: 400;
+    font-size: 16px;
+    color: #3E3E3E;
+}
+
+
+/* button */
+
+.fin-signup-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3E3E3E;
+    border-radius: 30px;
+    width: 200px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+    transition: all .2s ease;
+    padding: 14px 20px;
+    cursor: pointer;
+    border: none;
+    margin: auto;
+}
+
+.fin-signup-btn:hover {
     color: #FFA92E;
 }
 
@@ -903,7 +1102,6 @@ input[type="number"] {
 }
 
 .aboutus-title {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 700;
     font-size: 21px;
     color: #3E3E3E;
@@ -919,7 +1117,6 @@ input[type="number"] {
 }
 
 .aboutus li a {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 500;
     font-size: 16.4px;
     color: #3E3E3E;
@@ -937,7 +1134,6 @@ input[type="number"] {
 }
 
 .contact-title {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
     font-weight: 700;
     font-size: 21px;
     color: #3E3E3E;
@@ -1166,9 +1362,7 @@ input[type="number"] {
         margin: 3vw;
         font-size: 11.5px;
     }
-    .cases-list:hover .dropdown-cases-content {
-        display: none;
-    }
+    .cases-list:hover .dropdown-cases-content,
     .collection-list:hover .dropdown-collection-content {
         display: none;
     }
@@ -1196,38 +1390,10 @@ input[type="number"] {
         display: none;
     }
     /* search */
-    .search-icon {
-        width: 0;
-        height: 0;
-    }
-    .search-icon-wrap {
-        width: 0;
-        height: 0;
-    }
+    .search-icon,
+    .search-icon-wrap,
     .search-icon .input {
-        width: 0;
-        height: 0;
-    }
-    /* footer  */
-    .footer-container {
-        height: 15vh;
-    }
-    .footwrapper {
-        max-width: 50%;
-    }
-    .aboutus-title {
-        font-size: 14px;
-        margin-top: 2.3vw;
-    }
-    .aboutus li a {
-        font-size: 11px;
-    }
-    .contact-title {
-        font-size: 14px;
-        margin-top: 2.3vw;
-    }
-    .contact li {
-        width: 20px;
+        display: none;
     }
     /* cases page body */
     /* header */
@@ -1246,13 +1412,18 @@ input[type="number"] {
         font-size: 14px;
     }
     .name-sort,
-    .price-sort {
+    .price-sort,
+    .latest-sort {
         font-size: 12px;
         padding: 4px 4px;
     }
     .name-sort-to a,
-    .price-sort-to a {
+    .price-sort-to a,
+    .latest-sort a {
         font-size: 12px;
+    }
+    .latest-sort a {
+        margin-left: 4px;
     }
     .dropdown-sort {
         box-shadow: none;
@@ -1261,6 +1432,7 @@ input[type="number"] {
     .name-sort-to {
         display: block;
         margin-left: 0;
+        top: 22px;
         box-shadow: none;
         min-width: 100px;
     }
@@ -1268,7 +1440,7 @@ input[type="number"] {
     .price-sort-to {
         display: block;
         margin-left: 0;
-        top: 40px;
+        top: 74px;
         box-shadow: none;
         min-width: 100px;
         z-index: 1;
@@ -1287,7 +1459,6 @@ input[type="number"] {
     }
     /* case product  */
     .cases-product-showcase {
-        grid-template-rows: min-content;
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .cases-name {
@@ -1352,6 +1523,100 @@ input[type="number"] {
         font-size: 15px;
         color: #FFA92E;
     }
+    /* login page */
+    /* all */
+    .login-page-container .wrapper {
+        padding: 20px 0;
+        display: block;
+    }
+    .panel-login .title,
+    .panel-signup .title {
+        font-size: 17px;
+    }
+    .login-wrapper {
+        border-right: none;
+        border-bottom: solid 1px #d8d8d8;
+        padding: 10px;
+    }
+    /* login zone */
+    .panel-login {
+        width: 270px;
+    }
+    .forgot-password a {
+        font-size: 13px;
+    }
+    .login-form-input {
+        font-size: 14px;
+        height: 35px;
+    }
+    .login-btn {
+        width: 140px;
+        height: 35px;
+        font-size: 15px;
+    }
+    /* signup zone */
+    .signup-wrapper {
+        padding: 30px;
+    }
+    .signup-btn-wrapper {
+        width: 140px;
+        margin-top: 13px;
+    }
+    .signup-btn {
+        height: 35px;
+        font-size: 15px;
+    }
+    /* signup page */
+    /* form width */
+    .signup-form {
+        width: 450px;
+    }
+    /* title */
+    .form-title {
+        margin-bottom: 20px;
+        font-size: 19px;
+    }
+    /* form signup */
+    .form-row {
+        margin: 10px 0;
+    }
+    .form__input {
+        font-size: 14px;
+        height: 40px;
+        padding: 12px 20px;
+    }
+    .form__label {
+        font-size: 14px;
+    }
+    .form-row-login a,
+    .form-row-login {
+        font-size: 13px;
+    }
+    /* button */
+    .fin-signup-btn {
+        width: 180px;
+        height: 35px;
+        font-size: 16px;
+        margin-top: 15px;
+    }
+    /* footer  */
+    .footer-container {
+        height: 15vh;
+    }
+    .footwrapper {
+        max-width: 50%;
+    }
+    .aboutus-title,
+    .contact-title {
+        font-size: 14px;
+        margin-top: 2.3vw;
+    }
+    .aboutus li a {
+        font-size: 11px;
+    }
+    .contact li {
+        width: 20px;
+    }
 }
 
 @media (min-width:769px) and (max-width: 1436px) {
@@ -1365,24 +1630,102 @@ input[type="number"] {
         margin: 2.5vw;
         font-size: 14px;
     }
-    /* footer  */
-    .aboutus-title {
+    /* cases page body */
+    .sidebar-collection .title,
+    .sidebar-price .title,
+    .cases-model {
+        font-size: 18px;
+    }
+    .iphone-list a,
+    .filter label,
+    .cases-name,
+    .cases-price {
         font-size: 16px;
-        margin-top: 2.3vw;
-    }
-    .aboutus li a {
-        font-size: 13px;
-    }
-    .contact-title {
-        font-size: 16px;
-        margin-top: 2.3vw;
-    }
-    .contact li {
-        width: 22px;
     }
     /* case product  */
     .cases-product-showcase {
-        grid-template-rows: min-content;
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    /* detail page body */
+    /* back button */
+    .back-btn {
+        width: 40%;
+    }
+    .back-btn a {
+        font-size: 17px;
+    }
+    /* name and price detail */
+    .name-price {
+        margin-top: 25px;
+        width: 120px;
+    }
+    .detail-cases-detail .case-name {
+        font-size: 21px;
+    }
+    .detail-cases-detail .case-model {
+        font-size: 14px;
+    }
+    .detail-cases-detail .case-price {
+        font-size: 13px;
+    }
+    /* quantity button  */
+    .quantity-container {
+        margin-top: 25px;
+    }
+    .quantity-container .title {
+        font-size: 12px;
+    }
+    .input-group input[type='button'] {
+        min-width: 22px;
+    }
+    .input-group .button-minus,
+    .input-group .button-plus {
+        height: 21px;
+        width: 21px;
+    }
+    .input-group .quantity-field {
+        height: 21px;
+        width: 33px;
+        font-size: 12px;
+    }
+    /* add to cart button */
+    .addtocart {
+        margin-top: 20px;
+    }
+    .addtocart-container {
+        width: 140px;
+    }
+    .addtocart-container a {
+        font-size: 15px;
+    }
+    /* login page */
+    /* all */
+    .login-page-container .wrapper {
+        padding: 20px 0;
+        display: block;
+    }
+    .login-wrapper {
+        border-right: none;
+        border-bottom: solid 1px #d8d8d8;
+        padding: 10px;
+    }
+    .login-btn,
+    .signup-btn {
+        font-size: 18px;
+    }
+    /* footer  */
+    .footwrapper {
+        max-width: 50%;
+    }
+    .aboutus-title,
+    .contact-title {
+        font-size: 18px;
+        margin-top: 2.3vw;
+    }
+    .aboutus li a {
+        font-size: 15px;
+    }
+    .contact li {
+        width: 25px;
     }
 }

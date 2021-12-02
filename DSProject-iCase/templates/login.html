@@ -1,13 +1,37 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="login-page-container">
-    <div class="login-wrapper">
-        <div class="panel-login">
-            <div class="title"></div>
-            <div class="login-form"></div>
+    <div class="wrapper">
+        <div class="login-wrapper">
+            <div class="panel-login">
+                <div class="title">เข้าสู่ระบบ</div>
+                <div class="login-form">
+                    <form class="login-form-form" action="#" method="post">
+                        <div class="login-form-container">
+                            <div class="email-password">
+                                <input class="login-form-input" type="email" placeholder="ระบุอีเมล" value="" required>
+                                <input class="login-form-input" type="password" placeholder="ระบุรหัสผ่าน" value="" required>
+                            </div>
+                            <div class="forgot-password">
+                                <a href="#">ลืมรหัสผ่าน?</a>
+                            </div>
+                            <button class="login-btn" type="submit">เข้าสู่ระบบ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="signup-wrapper">
+            <div class="panel-signup">
+                <div class="title">ลงทะเบียนเป็นสมาชิก iCase</div>
+                <div class="signup-btn-wrapper">
+                    <a href="/signup">
+                        <div class="signup-btn">ลงทะเบียน</div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="signup-wrapper"></div>
 </div>
 
 {%endblock%}

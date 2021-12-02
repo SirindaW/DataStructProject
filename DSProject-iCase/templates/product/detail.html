@@ -35,7 +35,7 @@
     function decrement() {
         var data = parseInt(document.getElementById("items-quantity").value);
         if (data > 1) {
-            data = data - 1;
+            data -= 1;
         } else {
             data = 1;
         }
@@ -44,14 +44,21 @@
 
     function increment() {
         var data = parseInt(document.getElementById("items-quantity").value);
-        data = data + 1;
+        if (data < 100) {
+            data += 1;
+        } else {
+            data = 100;
+        }
         document.getElementById("items-quantity").value = data;
     }
 
     window.onclick = function(event) {
         var data = parseInt(document.getElementById("items-quantity").value);
-        if (data < 1) {
+        if (data < 1 || !data) {
             document.getElementById("items-quantity").value = 1;
+        }
+        if (data > 100) {
+            document.getElementById("items-quantity").value = 100;
         }
     }
 </script>
