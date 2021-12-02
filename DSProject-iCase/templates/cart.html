@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %} {%load static%}
+<div class="cart-container">
+    <div class="wrapper">
+        <div class="cart-form">
+            <div class="cart-title-bar">
+                <div class="cart-title">ตะกร้าสินค้าของคุณ</div>
+                <div class="price-title">ราคา</div>
+                <div class="quantity-title">จำนวน</div>
+                <div class="subtotal-price-title">ยอดรวมย่อย</div>
+            </div>
+            <div class="cartpage-cart-items">
+                <!-- cart item -->
+                <div class="cartpage-items-row">
+                    <div class="cartpage-items-img"><img src="{%static '/images/product_imgs/CASE1.png'%}" width="80px" class="cartpage-case-image"></div>
+                    <div class="cartpage-items-details">
+                        <div class="cartpage-items-name-model"># #</div>
+                        <div class="cartpage-items-price-quantity">
+                            <div class="cartpage-item-price"># ฿</div>
+                            <div class="cartpage-item-quantity">x #</div>
+                        </div>
+                    </div>
+                    <div class="cartpage-items-remove">
+                        <span class="cartpage-remove" onclick=""></span>
+                    </div>
+                </div>
+            </div>
+            <div class="cartpage-cart-checkout"></div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

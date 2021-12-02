@@ -14,3 +14,12 @@ def login_view(request):
 
 def signup_view(request):
     return render(request, 'signup.html')
+
+def about_view(request):
+    return render(request, 'aboutus.html')
+
+def profile_view(request):
+    return render(request, 'profile.html')
+
+def cart_view(request):
+    return render(request, 'cart.html')

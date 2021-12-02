@@ -49,7 +49,7 @@
                                 <a class="see-all" href="/cases/collection">ดูทั้งหมด</a>
                             </div>
                         </div>
-                        <div class="aboutus-list"><a href="#">เกี่ยวกับเรา</a></div>
+                        <div class="aboutus-list"><a href="/about">เกี่ยวกับเรา</a></div>
                     </div>
                     <div class="righttab">
                         <div class="search-icon">
@@ -64,18 +64,29 @@
                                 <div class="cart-count-container">
                                     <div class="cart-count">#</div>
                                 </div>
-                                <a href="#"><img src="{%static '/images/cart.svg'%}" class="cart-image"></a>
+                                <a href="/cart"><img src="{%static '/images/cart.svg'%}" class="cart-image"></a>
                             </div>
                             <div class="dropdown-cart-content fade-menubar">
                                 <div class="cart-title">สินค้าในตะกร้าของคุณ</div>
                                 <div class="cart-bought">
-                                    <ul>
-                                        <li></li>
-                                    </ul>
+                                    <div class="cart-items">
+                                        <!-- cart item -->
+                                        <div class="items-img"><img src="{%static '/images/product_imgs/CASE1.png'%}" class="case-image"></div>
+                                        <div class="items-details">
+                                            <div class="items-name-model"># #</div>
+                                            <div class="items-price-quantity">
+                                                <div class="item-price"># ฿</div>
+                                                <div class="item-quantity">x #</div>
+                                            </div>
+                                        </div>
+                                        <div class="items-remove">
+                                            <span class="remove" onclick=""></span>
+                                        </div>
+                                    </div>
                                     <div class="buy-container">
                                         <div class="price">สินค้าในตะกร้าของคุณ<br>ทั้งหมด # บาท</div>
                                         <div class="buy">
-                                            <a href="#">ชำระเงิน</a>
+                                            <a href="/cart">ชำระเงิน</a>
                                         </div>
                                     </div>
                                 </div>
@@ -115,7 +126,7 @@
             <ul class="aboutus">
                 <h3 class="aboutus-title">เกี่ยวกับเรา</h3>
                 <ul class="aboutus-list2">
-                    <li><a href="#">เกี่ยวกับเรา</a></li>
+                    <li><a href="/about">เกี่ยวกับเรา</a></li>
                     <li><a href="/cases">ร้านค้า</a></li>
                 </ul>
             </ul>
