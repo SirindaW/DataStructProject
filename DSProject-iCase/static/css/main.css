@@ -373,7 +373,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 4;
     cursor: pointer;
 }
 
@@ -1177,66 +1177,97 @@ input::-webkit-inner-spin-button {
 
 .cart-container {
     width: 100%;
-    margin-top: 20px;
+    min-height: 550px;
+    margin-top: 50px;
 }
 
-.cartpage-cart-items {
-    height: 100px;
-    border-bottom: 0.1px solid #47474746;
+.cart-container .wrapper {
+    width: 70%;
+}
+
+
+/* title bar */
+
+.cart-title-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    padding: 5px 9px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.603);
+    padding: 0 5px 30px 5px;
+}
+
+.cartpage-title {
+    font-weight: 700;
+    font-size: 25px;
+    min-width: 20%;
+}
+
+.name-space {
+    min-width: 25%;
+}
+
+.price-title,
+.quantity-title,
+.subtotal-price-title {
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    min-width: 15%;
+}
+
+.remove-space {
+    min-width: 5%;
+}
+
+
+/* item row */
+
+.cartpage-items-row {
+    border-bottom: 1px solid rgba(204, 204, 204, 0.603);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 10px 9px;
 }
 
 .cartpage-items-img {
-    width: 22%;
+    min-width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.case-image {
+.cartpage-case-image {
     width: 50px;
 }
 
-.items-details {
-    width: 71%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-}
-
-.items-name-model {
-    width: 60%;
+.cartpage-items-name-model {
     font-weight: 500;
-    font-size: 14.3px;
+    font-size: 16px;
+    min-width: 25%;
 }
 
-.items-price-quantity {
-    width: 30%;
-}
-
-.item-price,
-.item-quantity {
+.cartpage-item-price,
+.cartpage-item-quantity,
+.cartpage-subtotal-price {
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
+    text-align: center;
+    min-width: 15%;
 }
 
-.items-remove {
-    width: 7%;
-    height: 30px;
+.cartpage-items-remove {
+    min-width: 5%;
     display: flex;
-    justify-content: left;
     align-items: center;
 }
 
-.remove {
+.cartpage-remove {
     transform: translateY(-50%);
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -1244,22 +1275,371 @@ input::-webkit-inner-spin-button {
     margin-top: 10px;
 }
 
-.remove::before {
+.cartpage-remove::before {
     position: absolute;
     content: '';
     width: 2px;
-    height: 15px;
-    background: rgb(129, 129, 129);
+    height: 17px;
+    background: rgb(214, 83, 83);
     transform: rotate(45deg);
 }
 
-.remove::after {
+.cartpage-remove::after {
     position: absolute;
     content: '';
     width: 2px;
-    height: 15px;
-    background: rgb(129, 129, 129);
+    height: 17px;
+    background: rgb(214, 83, 83);
     transform: rotate(315deg);
+}
+
+
+/* checkout part */
+
+.space-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10px;
+}
+
+.space {
+    max-width: 70%;
+}
+
+.cartpage-cart-checkout {
+    min-width: 30%;
+}
+
+.total-price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.total-price-title {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.total-price {
+    font-weight: 500;
+    font-size: 17px;
+}
+
+
+/* checkout button */
+
+.button-shop,
+.button-checkout {
+    padding: 0 10px;
+}
+
+.checkout-shop-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 50px 0;
+}
+
+.checkout-shop-btn a {
+    text-decoration: none;
+}
+
+.shop-btn,
+.checkout-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    width: 180px;
+    height: 40px;
+    font-weight: 600;
+    font-size: 17px;
+    transition: all .2s ease;
+    padding: 14px 20px;
+    cursor: pointer;
+    border: none;
+    margin: auto;
+}
+
+.shop-btn {
+    background-color: #3E3E3E;
+    color: white;
+}
+
+.checkout-btn {
+    background-color: #FFA92E;
+    color: #3E3E3E;
+}
+
+.shop-btn:hover {
+    color: #FFA92E;
+}
+
+.checkout-btn:hover {
+    color: white;
+}
+
+
+/* about us */
+
+.aboutus-page-container {
+    width: 100%;
+    background-color: #FFA92E;
+}
+
+.aboutus-page-wrapper {
+    width: 50%;
+    min-height: 600px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutus-page-aboutus {
+    color: #3E3E3E;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+/* profile page */
+
+.profile-page-container {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.profile-page-wrapper {
+    width: 40%;
+    margin: auto;
+}
+
+
+/* private and password info part */
+
+.private-info-container,
+.change-password-container {
+    background-color: #ececec;
+    border-radius: 30px;
+    padding: 30px 40px;
+    margin-bottom: 30px;
+}
+
+.private-info-title,
+.change-password-title {
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.name-ctn,
+.lastname-ctn,
+.email-ctn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    width: 55%;
+}
+
+.name-title,
+.lastname-title,
+.email-title {
+    font-weight: 400;
+    font-size: 16px;
+    width: 50%;
+}
+
+.change-password-detail {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.name,
+.lastname,
+.email {
+    font-weight: 500;
+    font-size: 17px;
+    width: 50%;
+}
+
+
+/* button */
+
+.private-edit-btn,
+.change-password,
+.logout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.edit-btn,
+.change-password-btn,
+.logout-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3E3E3E;
+    border-radius: 30px;
+    width: 180px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 17px;
+    color: white;
+    transition: all .2s ease;
+    padding: 14px 20px;
+    cursor: pointer;
+    border: none;
+    margin: auto;
+}
+
+.edit-btn:hover,
+.change-password-btn:hover {
+    color: #FFA92E;
+}
+
+
+/* edit button click and change password click */
+
+.edit-info,
+.change-password-ctn {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.edit-info-container,
+.change-password-ctnin {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    border-radius: 30px;
+    width: 600px;
+}
+
+.edit-info-form,
+.change-password-form {
+    padding: 30px;
+}
+
+
+/* title */
+
+.edit-info-form-title,
+.change-password-form-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 22px;
+    color: #3E3E3E;
+    margin-bottom: 30px;
+}
+
+
+/* form edit */
+
+.edit-info-form-row,
+.change-password-form-row {
+    margin: 20px 0;
+}
+
+.edit-info-form-group,
+.change-password-form-group {
+    margin-top: 15px;
+}
+
+.edit-info-form__input,
+.change-password-form__input {
+    font-weight: 400;
+    font-size: 16px;
+    width: 100%;
+    height: 50px;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.edit-info-form__label,
+.change-password-form__label {
+    font-weight: 400;
+    font-size: 15px;
+}
+
+
+/* button */
+
+.form-button,
+.change-password-form-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.cancel-btn,
+.save-info-btn,
+.save-password-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3E3E3E;
+    border-radius: 30px;
+    width: 200px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+    transition: all .2s ease;
+    padding: 14px 20px;
+    cursor: pointer;
+    border: none;
+    margin: auto;
+}
+
+.cancel-btn {
+    background-color: white;
+    color: #3E3E3E;
+    border: 1px solid #3E3E3E
+}
+
+.cancel-btn:hover {
+    color: #868686;
+}
+
+.save-info-btn:hover,
+.save-password-btn:hover {
+    color: #FFA92E;
+}
+
+
+/* logout */
+
+.logout-container {
+    margin-bottom: 50px;
+}
+
+.logout-btn {
+    background-color: #FFA92E;
+    color: #3E3E3E;
+}
+
+.logout-btn:hover {
+    color: white;
 }
 
 
@@ -1398,7 +1778,6 @@ input::-webkit-inner-spin-button {
     color: #fff;
     opacity: 0.5;
     font-size: 1.2vw;
-    font-family: 'Outfit', sans-serif;
     text-shadow: 0 0 1px #000;
 }
 
@@ -1777,6 +2156,113 @@ input::-webkit-inner-spin-button {
         font-size: 16px;
         margin-top: 15px;
     }
+    /* cart page */
+    /* title bar */
+    .cartpage-title {
+        font-size: 15px;
+    }
+    .price-title,
+    .quantity-title,
+    .subtotal-price-title {
+        font-size: 12px;
+    }
+    /* item row */
+    .cartpage-case-image {
+        width: 40px;
+    }
+    .cartpage-items-name-model,
+    .cartpage-item-price,
+    .cartpage-item-quantity,
+    .cartpage-subtotal-price {
+        font-size: 13px;
+    }
+    .cartpage-remove {
+        width: 12px;
+        height: 12px;
+    }
+    .cartpage-remove::before,
+    .cartpage-remove::after {
+        width: 2px;
+        height: 12px;
+    }
+    /* checkout part */
+    .total-price-title,
+    .total-price {
+        font-size: 13px;
+    }
+    /* checkout button */
+    .shop-btn,
+    .checkout-btn {
+        width: 140px;
+        height: 30px;
+        font-size: 13px;
+    }
+    /* aboutus page */
+    .aboutus-page-aboutus {
+        font-size: 17px;
+    }
+    /* profile page */
+    .profile-page-container {
+        width: 100%;
+        margin-top: 50px;
+    }
+    .profile-page-wrapper {
+        width: 40%;
+        margin: auto;
+    }
+    /* private and password info part */
+    .private-info-title,
+    .change-password-title {
+        font-size: 16px;
+    }
+    .name-title,
+    .lastname-title,
+    .email-title,
+    .change-password-detail {
+        font-size: 13px;
+    }
+    .name,
+    .lastname,
+    .email {
+        font-size: 14px;
+    }
+    /* button */
+    .edit-btn,
+    .change-password-btn,
+    .logout-btn {
+        width: 150px;
+        height: 30px;
+        font-size: 12px;
+    }
+    /* edit button click and change password click */
+    .edit-info-container,
+    .change-password-ctnin {
+        width: 350px;
+    }
+    /* title */
+    .edit-info-form-title,
+    .change-password-form-title {
+        font-size: 19px;
+        margin-bottom: 5px;
+    }
+    /* form edit */
+    .edit-info-form__input,
+    .change-password-form__input {
+        font-size: 12px;
+        height: 35px;
+    }
+    .edit-info-form__label,
+    .change-password-form__label {
+        font-size: 11px;
+    }
+    /* button */
+    .cancel-btn,
+    .save-info-btn,
+    .save-password-btn {
+        width: 130px;
+        height: 30px;
+        font-size: 14px;
+    }
     /* footer  */
     .footer-container {
         height: 15vh;
@@ -1890,6 +2376,44 @@ input::-webkit-inner-spin-button {
     .login-btn,
     .signup-btn {
         font-size: 18px;
+    }
+    /* cart page */
+    /* title bar */
+    .cartpage-title {
+        font-size: 19px;
+    }
+    .price-title,
+    .quantity-title,
+    .subtotal-price-title {
+        font-size: 16px;
+    }
+    /* item row */
+    .cartpage-items-name-model,
+    .cartpage-item-price,
+    .cartpage-item-quantity,
+    .cartpage-subtotal-price {
+        font-size: 16px;
+    }
+    .cartpage-remove {
+        width: 14px;
+        height: 14px;
+    }
+    .cartpage-remove::before,
+    .cartpage-remove::after {
+        width: 2px;
+        height: 14px;
+    }
+    /* checkout part */
+    .total-price-title,
+    .total-price {
+        font-size: 16px;
+    }
+    /* checkout button */
+    .shop-btn,
+    .checkout-btn {
+        width: 170px;
+        height: 35px;
+        font-size: 16px;
     }
     /* footer  */
     .footwrapper {

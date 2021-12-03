@@ -1,1 +1,100 @@
-{% extends 'base.html' %} {% block content %} {%endblock%}
+{% extends 'base.html' %} {% block content %}
+
+<div class="profile-page-container">
+    <div class="profile-page-wrapper">
+        <div class="private-info-container">
+            <div class="private-info-title">ข้อมูลส่วนบุคคล</div>
+            <div class="private-info">
+                <div class="name-ctn">
+                    <div class="name-title">ชื่อ</div>
+                    <div class="name">#name</div>
+                </div>
+                <div class="lastname-ctn">
+                    <div class="lastname-title">นามสกุล</div>
+                    <div class="lastname">#lastname</div>
+                </div>
+                <div class="email-ctn">
+                    <div class="email-title">อีเมล</div>
+                    <div class="email">#email</div>
+                </div>
+            </div>
+            <div class="private-edit-btn">
+                <button class="edit-btn" onclick="document.getElementById('edit-profile').style.display='block'" type="button">แก้ไข</button>
+                <div id="edit-profile" class="edit-info fade-menubar">
+                    <div class="edit-info-container">
+                        <div class="edit-info-form">
+                            <div class="edit-info-form-title">แก้ไขข้อมูลส่วนบุคคล</div>
+                            <div class="edit-info-form-field">
+                                <div class="edit-info-form-row">
+                                    <div class="edit-info-form-group">
+                                        <label for="edit-info-first-name" class="edit-info-form__label">ชื่อ</label>
+                                        <input id="edit-info-first-name" placeholder="ระบุชื่อ" type="text" value="" class="edit-info-form__input">
+                                    </div>
+                                    <div class="edit-info-form-group">
+                                        <label for="edit-info-last-name" class="edit-info-form__label">นามสกุล</label>
+                                        <input id="edit-info-last-name" placeholder="ระบุนามสกุล" type="text" value="" class="edit-info-form__input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-button">
+                                <button onclick="document.getElementById('edit-profile').style.display='none'" class="cancel-btn" type="button">ยกเลิก</button>
+                                <button class="save-info-btn" type="submit">บันทึก</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="change-password-container">
+            <div class="change-password-title">เปลี่ยนรหัสผ่าน</div>
+            <div class="change-password-detail">เมื่อเปลี่ยนรหัสเรียบร้อยแล้ว โปรดเข้าสู่ระบบใหม่อีกครั้งเพื่อดำเนินการต่อ</div>
+            <div class="change-password">
+                <button class="change-password-btn" onclick="document.getElementById('change-pw').style.display='block'" type="button">เปลี่ยนรหัสผ่าน</button>
+                <div id="change-pw" class="change-password-ctn fade-menubar">
+                    <div class="change-password-ctnin">
+                        <div class="change-password-form">
+                            <div class="change-password-form-title">เปลี่ยนรหัสผ่าน</div>
+                            <div class="change-password-form-field">
+                                <div class="change-password-form-row">
+                                    <div class="change-password-form-group">
+                                        <label for="old-password" class="change-password-form__label">รหัสผ่านเดิม</label>
+                                        <input id="old-password" placeholder="ระบุรหัสผ่านเดิม" type="text" value="" class="change-password-form__input">
+                                    </div>
+                                    <div class="change-password-form-group">
+                                        <label for="new-password" class="change-password-form__label">รหัสผ่านใหม่</label>
+                                        <input id="new-password" placeholder="ระบุรหัสผ่านใหม่" type="text" value="" class="change-password-form__input">
+                                    </div>
+                                    <div class="change-password-form-group">
+                                        <label for="confirm-new-password" class="change-password-form__label">ยืนยันรหัสผ่านใหม่</label>
+                                        <input id="confirm-new-password" placeholder="ยืนยันรหัสผ่านใหม่" type="text" value="" class="change-password-form__input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="change-password-form-button">
+                                <button onclick="document.getElementById('change-pw').style.display='none'" class="cancel-btn" type="button">ยกเลิก</button>
+                                <button class="save-password-btn" type="submit">บันทึก</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="logout-container">
+            <button class="logout-btn" type="submit">ออกจากระบบ</button>
+        </div>
+    </div>
+</div>
+<script>
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        var modal = document.getElementById('edit-profile');
+        var modal2 = document.getElementById('change-pw');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        if (event.target == modal2) {
+            modal2.style.display = "none";
+        }
+    }
+</script>
+{%endblock%}

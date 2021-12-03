@@ -3,28 +3,43 @@
     <div class="wrapper">
         <div class="cart-form">
             <div class="cart-title-bar">
-                <div class="cart-title">ตะกร้าสินค้าของคุณ</div>
+                <div class="cartpage-title">ตะกร้าสินค้าของคุณ</div>
+                <div class="name-space"> </div>
                 <div class="price-title">ราคา</div>
                 <div class="quantity-title">จำนวน</div>
                 <div class="subtotal-price-title">ยอดรวมย่อย</div>
+                <div class="remove-space"> </div>
             </div>
             <div class="cartpage-cart-items">
                 <!-- cart item -->
                 <div class="cartpage-items-row">
-                    <div class="cartpage-items-img"><img src="{%static '/images/product_imgs/CASE1.png'%}" width="80px" class="cartpage-case-image"></div>
-                    <div class="cartpage-items-details">
-                        <div class="cartpage-items-name-model"># #</div>
-                        <div class="cartpage-items-price-quantity">
-                            <div class="cartpage-item-price"># ฿</div>
-                            <div class="cartpage-item-quantity">x #</div>
-                        </div>
-                    </div>
+                    <div class="cartpage-items-img"><img src="{%static '/images/product_imgs/CASE1.png'%}" class="cartpage-case-image"></div>
+                    <div class="cartpage-items-name-model">#name #model</div>
+                    <div class="cartpage-item-price"># ฿</div>
+                    <div class="cartpage-item-quantity">#</div>
+                    <div class="cartpage-subtotal-price"># ฿</div>
                     <div class="cartpage-items-remove">
                         <span class="cartpage-remove" onclick=""></span>
                     </div>
                 </div>
             </div>
-            <div class="cartpage-cart-checkout"></div>
+            <div class="space-container">
+                <div class="space"></div>
+                <div class="cartpage-cart-checkout">
+                    <div class="total-price-container">
+                        <div class="total-price-title">ราคาทั้งหมด</div>
+                        <div class="total-price"># ฿</div>
+                    </div>
+                    <div class="checkout-shop-btn">
+                        <div class="button-shop">
+                            <a href="/cases"><button class="shop-btn" type="button">เลือกดูสินค้าต่อ</button></a>
+                        </div>
+                        <div class="button-checkout">
+                            <button class="checkout-btn" type="button">ชำระเงิน</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
