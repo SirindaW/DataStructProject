@@ -782,7 +782,7 @@ nav {
 .detail-body-container .wrapper {
     margin-top: 20px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 
@@ -790,6 +790,7 @@ nav {
 
 .back-btn {
     margin-top: 20px;
+    width: 20%;
 }
 
 .back-btn a {
@@ -813,8 +814,21 @@ nav {
     width: 300px;
 }
 
+.detail-cases-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 40%;
+}
+
+.this-image {
+    margin: auto;
+}
+
 .detail-cases-detail {
     display: block;
+    width: 40%;
 }
 
 .detail-cases-detail .case-name {
@@ -2029,11 +2043,11 @@ input::-webkit-inner-spin-button {
     }
     /* detail page body */
     /* back button */
-    .back-btn {
-        width: 30%;
-    }
     .back-btn a {
         font-size: 13px;
+    }
+    .detail-cases-image {
+        margin-top: 15px;
     }
     /* name and price detail */
     .name-price {
