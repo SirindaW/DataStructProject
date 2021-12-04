@@ -17,15 +17,19 @@
                         <div class="name-sort-container">
                             <div class="name-sort">ชื่อสินค้า ▸</div>
                             <div class="name-sort-to">
-                                <a href="" onclick="href_query_filter('order','alpha-asc')" id='alpha-asc-filter'>A to Z</a><br>
-                                <a href="" onclick="href_query_filter('order','alpha-desc')" id='alpha-desc-filter'>Z to A</a>
+                                <a href="" onclick="href_query_filter('order','alpha-asc')" id='alpha-asc-filter'>A to
+                                    Z</a><br>
+                                <a href="" onclick="href_query_filter('order','alpha-desc')" id='alpha-desc-filter'>Z to
+                                    A</a>
                             </div>
                         </div>
                         <div class="price-sort-container">
                             <div class="price-sort">ราคา ▸</div>
                             <div class="price-sort-to">
-                                <a href="" onclick="href_query_filter('order','price-asc')" id='price-asc-filter'>น้อย ไป มาก</a><br>
-                                <a href="" onclick="href_query_filter('order','price-desc')" id='price-desc-filter'>มาก ไป น้อย</a>
+                                <a href="" onclick="href_query_filter('order','price-asc')" id='price-asc-filter'>น้อย
+                                    ไป มาก</a><br>
+                                <a href="" onclick="href_query_filter('order','price-desc')" id='price-desc-filter'>มาก
+                                    ไป น้อย</a>
                             </div>
                         </div>
                     </div>
@@ -38,66 +42,78 @@
                 <div class="sidebar-iphone">
                     <div class="iphone-list">
                         <a href="" onclick="href_query_filter('model','iphone13promax')" id='iphone13promax-filter'>iPhone 13 Pro Max</a><br>
-                        <a href="" onclick="href_query_filter('model','iphone13pro')" id='iphone13pro-filter'>iPhone 13 Pro</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone13pro')" id='iphone13pro-filter'>iPhone 13
+                            Pro</a><br>
                         <a href="" onclick="href_query_filter('model','iphone13')" id=iphone13-filter>iPhone 13</a><br>
-                        <a href="" onclick="href_query_filter('model','iphone13mini')" id=iphone13mini-filter>iPhone 13 Mini</a><br>
-                        <a href="" onclick="href_query_filter('model','iphone12promax')" id=iphone12promax-filter>iPhone 12 Pro Max</a><br>
-                        <a href="" onclick="href_query_filter('model','iphone12pro')" id=iphone12pro-filter>iPhone 12 Pro</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone13mini')" id=iphone13mini-filter>iPhone 13
+                            Mini</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone12promax')" id=iphone12promax-filter>iPhone
+                            12 Pro Max</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone12pro')" id=iphone12pro-filter>iPhone 12
+                            Pro</a><br>
                         <a href="" onclick="href_query_filter('model','iphone12')" id=iphone12-filter>iPhone 12</a><br>
-                        <a href="" onclick="href_query_filter('model','iphone12mini')" id='iphone12mini-filter'>iPhone 12 Mini</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone12mini')" id='iphone12mini-filter'>iPhone
+                            12 Mini</a><br>
                         <a href="" onclick="href_query_filter('model','iphone11promax')" id='iphone11promax-filter'>iPhone 11 Pro Max</a><br>
-                        <a href="" onclick="href_query_filter('model','iphone11pro')" id='iphone11pro-filter'>iPhone 11 Pro</a><br>
-                        <a href="" onclick="href_query_filter('model','iphone11')" id='iphone11-filter'>iPhone 11</a><br>
-                        <a href="" onclick="href_query_filter('model','iphonexsmax')" id='iphonexsmax-filter'>iPhone XS Max</a><br>
-                        <a href="" onclick="href_query_filter('model','iphonexs')" id='iphonexs-filter'>iPhone XS</a><br>
-                        <a href="" onclick="href_query_filter('model','iphonexr')" id='iphonexr-filter'>iPhone XR</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone11pro')" id='iphone11pro-filter'>iPhone 11
+                            Pro</a><br>
+                        <a href="" onclick="href_query_filter('model','iphone11')" id='iphone11-filter'>iPhone
+                            11</a><br>
+                        <a href="" onclick="href_query_filter('model','iphonexsmax')" id='iphonexsmax-filter'>iPhone XS
+                            Max</a><br>
+                        <a href="" onclick="href_query_filter('model','iphonexs')" id='iphonexs-filter'>iPhone
+                            XS</a><br>
+                        <a href="" onclick="href_query_filter('model','iphonexr')" id='iphonexr-filter'>iPhone
+                            XR</a><br>
                         <a href="" onclick="href_query_filter('model','iphonex')" id='iphonex-filter'>iPhone X</a><br>
-                        <a href="/cases">ดูทั้งหมด</a>
+                        <a href="/cases" onclick="clear_all_checkbox_filter()">ดูทั้งหมด</a>
                     </div>
                 </div>
                 <div class="sidebar-collection">
                     <div class="title">คอลเลคชั่น</div>
                     <div class="collection-filter">
-                        <div class="filter">
-                            <input type="checkbox" id=collect-vangogh>
-                            <label for="collect-vangogh">Disney Princess</label>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" id=collect-onepiece>
-                            <label for="collect-onepiece">Basquiat</label>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" id=collect-harry>
-                            <label for="collect-harry">Squid Game</label>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" id=collect-snoopy>
-                            <label for="collect-snoopy">VEGEMITE</label>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" id=collect-pacman>
-                            <label for="collect-pacman">Stranger Things</label>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" id=collect-cosmos>
-                            <label for="collect-cosmos">HIKARI</label>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" id=collect-doodle>
-                            <label for="collect-doodle">Market</label>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" id=collect-lol>
-                            <label for="collect-lol">Urban Sophistication</label>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" id=collect-pewdie>
-                            <label for="collect-pewdie">Coke</label>
-                        </div>
-                        <div class="filter">
-                            <input type="checkbox" id=collect-keith>
-                            <label for="collect-keith">BLVCK</label>
-                        </div>
+                        <form id="collection-form">
+                            <div class="filter">
+                                <input type="checkbox" id="disneyprincess" onchange="filter_checkbox_collection_onchange()">
+                                <label for="disneyprincess">Disney Princess</label>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" id="basquiat" onchange="filter_checkbox_collection_onchange()">
+                                <label for="basquiat">Basquiat</label>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" id="squidgame" onchange="filter_checkbox_collection_onchange()">
+                                <label for="squidgame">Squid Game</label>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" id="vegemite" onchange="filter_checkbox_collection_onchange()">
+                                <label for="vegemite">VEGEMITE</label>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" id="strangerthings" onchange="filter_checkbox_collection_onchange()">
+                                <label for="strangerthings">Stranger Things</label>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" id="hikari" onchange="filter_checkbox_collection_onchange()">
+                                <label for="hikari">HIKARI</label>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" id="market" onchange="filter_checkbox_collection_onchange()">
+                                <label for="market">Market</label>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" id="urbansophistication" onchange="filter_checkbox_collection_onchange()">
+                                <label for="urbansophistication">Urban Sophistication</label>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" id="coke" onchange="filter_checkbox_collection_onchange()">
+                                <label for="coke">Coke</label>
+                            </div>
+                            <div class="filter">
+                                <input type="checkbox" id="blvck" onchange="filter_checkbox_collection_onchange()">
+                                <label for="blvck">BLVCK</label>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div class="sidebar-price">
@@ -152,6 +168,9 @@
 </div>
 <script src="{%static '/js/filter_query.js'%}"></script>
 <script>
+    restore_checkboxes_states(); // Restore the checkbox states from sessionStorage /* takes me ages to invent -tsphere.*/
+
+
     /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
     function myFunction() {
         document.getElementById("dropdown-sort-content").classList.toggle("show");

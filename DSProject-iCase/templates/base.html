@@ -10,6 +10,8 @@
     <title>iCase</title>
 
     <link rel="stylesheet" href="{%static '/css/main.css'%}">
+    <!-- Filter script -->
+    <script src="{%static '/js/filter_query.js'%}"></script>
 </head>
 
 <body>
@@ -34,7 +36,7 @@
                                 <a href="/cases/?model=iphone12pro">iPhone 12 Pro</a>
                                 <a href="/cases/?model=iphone12">iPhone 12</a>
                                 <a href="/cases/?model=iphone12mini">iPhone 12 Mini</a>
-                                <a class="see-all" href="/cases">ดูทั้งหมด</a>
+                                <a class="see-all" href="/cases" onclick="clear_all_checkbox_filter()">ดูทั้งหมด</a>
                             </div>
                         </div>
                         <div class="collection-list">

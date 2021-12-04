@@ -1,6 +1,6 @@
 from django.shortcuts import render,get_object_or_404
 from .models import CollectionFeature, IphoneModel, Product
-from django.http import Http404
+from django.http import Http404,QueryDict
 from django.core.exceptions import ObjectDoesNotExist
 from DS.sorting import sort_by_price, sort_by_alphabet
 
@@ -8,9 +8,12 @@ from DS.sorting import sort_by_price, sort_by_alphabet
 # Create your views here.
 
 def product_view(request):
-
+    # QueryDict get list for the specified key.
+    models = QueryDict.getlist(request.GET,'collection')
+    print(models)
     # for k in request.GET:
-    #     print(k,request.GET[k])
+    #     print(request.GET.get('model'))
+        # print(k,request.GET[k])
 
     # Model Filter
     if request.GET.get('model'):

@@ -8,6 +8,11 @@
                 <div class="sort-container">
                     <div onclick="myFunction()" class="dropbtn-sort">เรียงตาม ▾</div>
                     <div class="dropdown-sort fade-menubar" id="dropdown-sort-content">
+                        <div class="latest-sort-container">
+                            <div class="latest-sort">
+                                <a href="#">ล่าสุด</a>
+                            </div>
+                        </div>
                         <div class="name-sort-container">
                             <div class="name-sort">ชื่อสินค้า ▸</div>
                             <div class="name-sort-to">
@@ -76,7 +81,8 @@
 
                 <div class="cases-product">
                     <a href="/cases/product/{{obj.slug}}">
-                        <div class="cases-image"><img src="{{obj.image.url}}" class="product-image" width=100% alt=""></div>
+                        <div class="cases-image"><img src="{{obj.image.url}}" class="product-image" width=100% alt="">
+                        </div>
                         <div class="detail">
                             <!-- name and model switch -->
                             <div class="cases-model">{{obj.title}}</div>
