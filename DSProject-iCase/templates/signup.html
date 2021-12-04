@@ -3,46 +3,89 @@
 <div class="signup-page-container">
     <div class="wrapper">
         <div class="signup-form">
-            <div class="form-title">สร้างบัญชีผู้ใช้</div>
-            <div class="form-field">
-                <div class="form-row-2col">
-                    <div class="form-group1">
-                        <label for="first-name" class="form__label">ชื่อ</label>
-                        <input id="first-name" placeholder="ระบุชื่อ" type="text" value="" class="form__input">
-                    </div>
-                    <div class="form-group2">
-                        <label for="last-name" class="form__label">นามสกุล</label>
-                        <input id="last-name" placeholder="ระบุนามสกุล" type="text" value="" class="form__input">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="customer-email" class="form__label">อีเมล</label>
-                        <input id="customer-email" placeholder="ระบุอีเมล" type="email" value="" class="form__input">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="password" class="form__label">รหัสผ่าน</label>
-                        <div class="password-input">
-                            <input id="password" placeholder="ระบุรหัสผ่าน" value="" type="password" class="form__input">
+
+            <form method="POST">
+                {%csrf_token%}
+                <div class="form-title">สร้างบัญชีผู้ใช้</div>
+                <div class="form-field">
+                    <div class="form-row-2col">
+                        <div class="form-group1">
+                            <label for="first-name" class="form__label">ชื่อ</label>
+                            <!-- First name field -->
+                            <div>{{form.first_name}}</div>
+                            <!-- First name errors notice -->
+                            {%if form.first_name.errors%}
+                            <div>{{form.first_name.errors}}</div>
+                            {%endif%}
+                            <!-- <input id="first-name" placeholder="ระบุชื่อ" type="text" value="" class="form__input"> -->
+                        </div>
+                        <div class="form-group2">
+                            <label for="last-name" class="form__label">นามสกุล</label>
+                            <!-- Last name field -->
+                            <div>{{form.last_name}}</div>
+                            <!-- Last name errors notice -->
+                            {%if form.last_name.errors%}
+                            <div>{{form.last_name.errors}}</div>
+                            {%endif%}
+                            <!-- <input id="last-name" placeholder="ระบุนามสกุล" type="text" value="" class="form__input"> -->
                         </div>
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group-confirm">
-                        <div class="confirm-password-input">
-                            <input id="confirm-password" placeholder="ยืนยันรหัสผ่าน" value="" type="password" class="form__input">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customer-email" class="form__label">อีเมล</label>
+                            <!-- Email field -->
+                            <div>{{form.email}}</div>
+                            <!-- Email errors notice -->
+                            {%if form.email.errors%}
+                            <div>{{form.email.errors}}</div>
+                            {%endif%}
+
+
+                            <!-- sign up error notice -->
+                            <div>
+                                {%if form.non_field_errors%}
+                                <div>{{form.non_field_errors}}</div>
+                                {%endif%}
+                            </div>
+                            <!-- <input id="customer-email" placeholder="ระบุอีเมล" type="email" value="" class="form__input"> -->
                         </div>
                     </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password" class="form__label">รหัสผ่าน</label>
+                            <div class="password-input">
+                                <!-- password field -->
+                                <div>{{form.password1}}</div>
+                                <!-- password errors notice -->
+                                {%if form.password1.errors%}
+                                <div>{{form.password1.errors}}</div>
+                                {%endif%}
+                                <!-- <input id="password" placeholder="ระบุรหัสผ่าน" value="" type="password" class="form__input"> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group-confirm">
+                            <div class="confirm-password-input">
+                                <!-- confirmpassword field -->
+                                <div>{{form.password2}}</div>
+                                <!-- confirmpassword errors notice -->
+                                {%if form.password2.errors%}
+                                <div>{{form.password2.errors}}</div>
+                                {%endif%}
+                                <!-- <input id="confirm-password" placeholder="ยืนยันรหัสผ่าน" value="" type="password" class="form__input"> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row-login">
+                        <span>มีบัญชีแล้ว? <a href="/account/login">เข้าสู่ระบบ</a></span>
+                    </div>
                 </div>
-                <div class="form-row-login">
-                    <span>มีบัญชีแล้ว? <a href="/login">เข้าสู่ระบบ</a></span>
+                <div class="form-button">
+                    <button class="fin-signup-btn" type="submit">เสร็จสิ้น</button>
                 </div>
-            </div>
-            <div class="form-button">
-                <button class="fin-signup-btn" type="submit">เสร็จสิ้น</button>
-            </div>
+
+            </form>
         </div>
     </div>
 </div>

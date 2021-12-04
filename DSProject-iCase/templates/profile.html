@@ -7,15 +7,15 @@
             <div class="private-info">
                 <div class="name-ctn">
                     <div class="name-title">ชื่อ</div>
-                    <div class="name">#name</div>
+                    <div class="name">{{user.first_name}}</div>
                 </div>
                 <div class="lastname-ctn">
                     <div class="lastname-title">นามสกุล</div>
-                    <div class="lastname">#lastname</div>
+                    <div class="lastname">{{user.last_name}}</div>
                 </div>
                 <div class="email-ctn">
                     <div class="email-title">อีเมล</div>
-                    <div class="email">#email</div>
+                    <div class="email">{{user.email}}</div>
                 </div>
             </div>
             <div class="private-edit-btn">
@@ -23,23 +23,30 @@
                 <div id="edit-profile" class="edit-info fade-menubar">
                     <div class="edit-info-container">
                         <div class="edit-info-form">
+
                             <div class="edit-info-form-title">แก้ไขข้อมูลส่วนบุคคล</div>
-                            <div class="edit-info-form-field">
-                                <div class="edit-info-form-row">
-                                    <div class="edit-info-form-group">
-                                        <label for="edit-info-first-name" class="edit-info-form__label">ชื่อ</label>
-                                        <input id="edit-info-first-name" placeholder="ระบุชื่อ" type="text" value="" class="edit-info-form__input">
-                                    </div>
-                                    <div class="edit-info-form-group">
-                                        <label for="edit-info-last-name" class="edit-info-form__label">นามสกุล</label>
-                                        <input id="edit-info-last-name" placeholder="ระบุนามสกุล" type="text" value="" class="edit-info-form__input">
+                            <form method="POST">
+                                {%csrf_token%}
+                                <div class="edit-info-form-field">
+                                    <div class="edit-info-form-row">
+                                        <div class="edit-info-form-group">
+                                            <label for="edit-info-first-name" class="edit-info-form__label">ชื่อ</label>
+                                            <div>{{form.first_name}}</div>
+                                            <!-- <input id="edit-info-first-name" placeholder="ระบุชื่อ" type="text" value="" class="edit-info-form__input"> -->
+                                        </div>
+                                        <div class="edit-info-form-group">
+                                            <label for="edit-info-last-name" class="edit-info-form__label">นามสกุล</label>
+                                            <input id="edit-info-last-name" placeholder="ระบุนามสกุล" type="text" value="" class="edit-info-form__input">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-button">
-                                <button onclick="document.getElementById('edit-profile').style.display='none'" class="cancel-btn" type="button">ยกเลิก</button>
-                                <button class="save-info-btn" type="submit">บันทึก</button>
-                            </div>
+                                <div class="form-button">
+                                    <button onclick="document.getElementById('edit-profile').style.display='none'" class="cancel-btn" type="button">ยกเลิก</button>
+                                    <button class="save-info-btn" type="submit">บันทึก</button>
+                                </div>
+
+                            </form>
+
                         </div>
                     </div>
                 </div>
@@ -47,7 +54,8 @@
         </div>
         <div class="change-password-container">
             <div class="change-password-title">เปลี่ยนรหัสผ่าน</div>
-            <div class="change-password-detail">เมื่อเปลี่ยนรหัสเรียบร้อยแล้ว โปรดเข้าสู่ระบบใหม่อีกครั้งเพื่อดำเนินการต่อ</div>
+            <div class="change-password-detail">เมื่อเปลี่ยนรหัสเรียบร้อยแล้ว โปรดเข้าสู่ระบบใหม่อีกครั้งเพื่อดำเนินการต่อ
+            </div>
             <div class="change-password">
                 <button class="change-password-btn" onclick="document.getElementById('change-pw').style.display='block'" type="button">เปลี่ยนรหัสผ่าน</button>
                 <div id="change-pw" class="change-password-ctn fade-menubar">
@@ -80,7 +88,7 @@
             </div>
         </div>
         <div class="logout-container">
-            <button class="logout-btn" type="submit">ออกจากระบบ</button>
+            <a href="/account/logout"><button class="logout-btn">ออกจากระบบ</button></a>
         </div>
     </div>
 </div>

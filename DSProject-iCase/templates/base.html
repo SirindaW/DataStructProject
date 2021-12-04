@@ -92,10 +92,15 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- login or profile page ###-->
+                        {% if request.user.is_authenticated %}
+                        <p>{{request.user.first_name}} {{request.user.last_name}}</p>{% endif %}
+
                         <div class="profile-icon">
-                            <!-- login or profile page ###-->
-                            <a href="/login"><img src="{%static '/images/profile.svg'%}" class="profile-image"></a>
+                            <a href="/account/profile"><img src="{%static '/images/profile.svg'%}" class="profile-image"></a>
                         </div>
+
                     </div>
                 </nav>
             </div>

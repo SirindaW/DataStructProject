@@ -5,12 +5,46 @@
         <div class="login-wrapper">
             <div class="panel-login">
                 <div class="title">เข้าสู่ระบบ</div>
+                <!-- flash message -->
+                {% if messages %} {% for message in messages%}
+
+                <p>{{message}}</p>
+
+                {% endfor %} {% endif %}
+
+                <!-- login -->
                 <div class="login-form">
-                    <form class="login-form-form" action="#" method="post">
+                    <form class="login-form-form" action="#" method="POST">
+                        {%csrf_token%}
                         <div class="login-form-container">
                             <div class="email-password">
-                                <input class="login-form-input" type="email" placeholder="ระบุอีเมล" value="" required>
-                                <input class="login-form-input" type="password" placeholder="ระบุรหัสผ่าน" value="" required>
+                                <div>
+                                    {%for field in form%}
+                                    <!-- Email and password fields -->
+                                    <div> {{field}} </div>
+                                    <div>
+                                        <!-- Help text for email and password -->
+                                        {%if field.help_text%}
+                                        <div>
+                                            {{field.help_text}}
+                                        </div>
+                                        {%endif%}
+                                    </div>
+                                    <div>
+                                        <!-- Error text from for email and password fields -->
+                                        {%for error in field.errors%}
+                                        <div>{{error}}</div>
+                                        {%endfor%}
+                                    </div>
+                                    {%endfor%}
+                                </div>
+                                <div>
+                                    <!-- If login is unsuccessful -->
+                                    {%if form.non_field_errors%}
+                                    <div>{{form.non_field_errors}}</div>
+                                    {%endif%}
+                                </div>
+
                             </div>
                             <div class="forgot-password">
                                 <a href="#">ลืมรหัสผ่าน?</a>
@@ -25,7 +59,7 @@
             <div class="panel-signup">
                 <div class="title">ลงทะเบียนเป็นสมาชิก iCase</div>
                 <div class="signup-btn-wrapper">
-                    <a href="/signup">
+                    <a href="/account/register">
                         <div class="signup-btn">ลงทะเบียน</div>
                     </a>
                 </div>
