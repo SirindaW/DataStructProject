@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404
-from .models import Product
+from .models import IphoneModel, Product
 from django.http import Http404
 from django.core.exceptions import ObjectDoesNotExist
 from DS.sorting import sort_by_price, sort_by_alphabet
@@ -18,7 +18,14 @@ def product_view(request):
         for k in Product.objects.all():
             if k.model.is_model(request.GET.get('model')):
                 allproducts.append(k)
+
+        # legend title
+        allmodels = IphoneModel.objects.all()
+        for m in allmodels:
+            if m.is_model(request.GET.get('model')):
+                legend = m.title
     else:
+        legend = 'iPhone เคส'
         allproducts = Product.objects.all()
 
 
@@ -51,6 +58,7 @@ def product_view(request):
 
 
     context = {
+        'legend_title': legend,
         'allproducts': allproducts
     }
 
