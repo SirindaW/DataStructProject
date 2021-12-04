@@ -2,7 +2,7 @@
 <div class="cases-page-body-container">
     <div class="wrapper">
         <div class="cases-page-body-header">
-            <div class="header-title">คอลเลคชั่น</div>
+            <div class="header-title">{{legend_title}}</div>
             <div class="header-body">
                 <div class="allproduct-text">สินค้าทั้งหมด</div>
                 <div class="sort-container">
@@ -30,16 +30,16 @@
             <div class="sidebar">
                 <div class="sidebar-iphone">
                     <div class="iphone-list">
-                        <a href="#">Disney Princess</a><br>
-                        <a href="#">Basquiat</a><br>
-                        <a href="#">Squid Game</a><br>
-                        <a href="#">VEGEMITE</a><br>
-                        <a href="#">Stranger Things</a><br>
-                        <a href="#">HIKARI</a><br>
-                        <a href="#">Market</a><br>
-                        <a href="#">Urban Sophistication</a><br>
-                        <a href="#">Coke</a><br>
-                        <a href="#">BLVCK</a><br>
+                        <a href="" onclick="href_query_filter('collection-filter','disneyprincess')" id='disneyprincess-filter'>Disney Princess</a><br>
+                        <a href="" onclick="href_query_filter('collection-filter','basquiat')" id='basquiat-filter'>Basquiat</a><br>
+                        <a href="" onclick="href_query_filter('collection-filter','squidgame')" id='squidgame-filter'>Squid Game</a><br>
+                        <a href="" onclick="href_query_filter('collection-filter','vegemite')" id='vegemite-filter'>VEGEMITE</a><br>
+                        <a href="" onclick="href_query_filter('collection-filter','strangerthings')" id='strangerthings-filter'>Stranger Things</a><br>
+                        <a href="" onclick="href_query_filter('collection-filter','hikari')" id='hikari-filter'>HIKARI</a><br>
+                        <a href="" onclick="href_query_filter('collection-filter','market')" id='market-filter'>Market</a><br>
+                        <a href="" onclick="href_query_filter('collection-filter','urbansophistication')" id='urbansophistication-filter'>Urban Sophistication</a><br>
+                        <a href="" onclick="href_query_filter('collection-filter','coke')" id='coke-filter'>Coke</a><br>
+                        <a href="" onclick="href_query_filter('collection-filter','blvck')" id='blvck-filter'>BLVCK</a><br>
                         <a href="/cases/collection">ดูทั้งหมด</a>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                 {%for obj in allproducts%}
 
                 <div class="cases-product">
-                    <a href="product/{{obj.slug}}">
+                    <a href="/cases/product/{{obj.slug}}">
                         <div class="cases-image"><img src="{{obj.image.url}}" class="product-image" width=100% alt=""></div>
                         <div class="detail">
                             <!-- name and model switch -->
@@ -92,6 +92,7 @@
         </div>
     </div>
 </div>
+<script src="{%static '/js/filter_query.js'%}"></script>
 <script>
     /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
     function myFunction() {
