@@ -27,8 +27,8 @@ function href_query_filter(parameter, value) {
     document.getElementById(id).href = result;
 }
 
-function restore_checkboxes_states() {
-    // retrieve data from sessionStorage
+function render_checkboxes_states() {
+    /* load checkboxes states from sessionStorage and change each checkboxes states corresposing to the stored state */
     storedStates = JSON.parse(sessionStorage.checkboxesStates)
 
     for (var key in Object(storedStates)) {
@@ -53,7 +53,7 @@ function clear_collection_checkboxes_states() {
 
 
     // reload the checkboxes states
-    restore_checkboxes_states()
+    render_checkboxes_states()
 
 }
 
@@ -61,19 +61,48 @@ function clear_all_checkbox_filter() {
     clear_collection_checkboxes_states()
 }
 
-function query_collection_filter() {
+function query_filter_cases_href() {
+    /* load checkboxes states from sessionStorage and return query for filter */
     filter_checked = []
-    var allCollections = document.getElementById('collection-form').children
-    for (let i = 0; i < allCollections.length; i++) {
-        checkbox = allCollections[i].children[0];
-        if (checkbox.checked == true) {
-            filter_checked.push(checkbox.id)
+    states = JSON.parse(sessionStorage.checkboxesStates)
+
+    for (var key in states) {
+        if (states[key] == true) {
+            filter_checked.push(key)
         }
-
     }
-    console.log(filter_checked)
 
-    current_url = window.location.href
+    // Read from checkboxes
+    // var allCollections = document.getElementById('collection-form').children
+    // for (let i = 0; i < allCollections.length; i++) {
+    //     checkbox = allCollections[i].children[0];
+    //     if (checkbox.checked == true) {
+    //         filter_checked.push(checkbox.id);
+    //     }
+    // }
+
+
+    console.log(filter_checked);
+
+    var current_url = window.location.href;
+
+    params = new URLSearchParams(current_url.split('?')[1]);
+    params.delete('collection');
+
+    for (var i in filter_checked) {
+        params.append('collection', filter_checked[i]);
+    }
+
+    console.log(params.toString());
+
+    var url_with_query = current_url.split('?')[0] + '?' + params.toString();
+    return url_with_query
+}
+
+function query_collection_filter() {
+    /* reload current page with current filter states */
+    var url_with_query = query_filter_cases_href();
+    window.location.replace(url_with_query);
 
     // new_url = 
     // window.location.replace('/cases/?collection=squidgame&collection=coke')
@@ -95,9 +124,10 @@ function filter_checkbox_collection_onchange() {
     sessionStorage.setItem('checkboxesStates', JSON.stringify(states))
 
     form = document.getElementById('collection-form')
-    form.submit()
+        // form.submit()
 
     // window.location.replace('/cases/?model=iphone13promax');
+    query_collection_filter()
 
 
 }

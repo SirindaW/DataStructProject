@@ -9,28 +9,47 @@ from DS.sorting import sort_by_price, sort_by_alphabet
 
 def product_view(request):
     # QueryDict get list for the specified key.
-    models = QueryDict.getlist(request.GET,'collection')
-    print(models)
+    models = QueryDict.getlist(request.GET,'model')
+    print("MODEL:",models)
     # for k in request.GET:
     #     print(request.GET.get('model'))
         # print(k,request.GET[k])
+    collections = QueryDict.getlist(request.GET,'collection')
+    print("COLLECTION:",collections)
+
+    # Title
+    legend = 'iPhone เคส'
+
+    # Fetch data base
+    allproducts = Product.objects.all()
 
     # Model Filter
     if request.GET.get('model'):
-        allproducts = []
-        for k in Product.objects.all():
+        selected = []
+        for k in allproducts:
             if k.model.is_model(request.GET.get('model')):
-                allproducts.append(k)
+                selected.append(k)
+        allproducts = selected
 
         # legend title
         allmodels = IphoneModel.objects.all()
         for m in allmodels:
             if m.is_model(request.GET.get('model')):
                 legend = m.title
-    else:
-        legend = 'iPhone เคส'
-        allproducts = Product.objects.all()
 
+    # Collection Filter
+    if request.GET.get('collection'):
+        selected = []
+        list_of_collections = QueryDict.getlist(request.GET,'collection')
+        # check if k in list_of_collections
+        for k in allproducts:
+            for c in list_of_collections:
+                if k.collection.is_collection(c):
+                    selected.append(k)
+                    break
+        allproducts=selected
+            
+        
 
     # Order options
     mode = {}
@@ -69,6 +88,7 @@ def product_view(request):
 
 
 def product_collections_view(request):
+
 
     # Collection Filter
     if request.GET.get('collection-filter'):
