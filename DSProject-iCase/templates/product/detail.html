@@ -1,4 +1,4 @@
- {%extends 'base.html'%} {%load static%} {%block content%}
+{%extends 'base.html'%} {%load static%} {%block content%}
 
 
 
@@ -11,7 +11,7 @@
         <div class="detail-cases-detail">
             <div class="name-price">
                 <div class="case-name">{{obj.title}}</div>
-                <div class="case-model">iPhone 13 Pro Max</div>
+                <div class="case-model">{{obj.model}}</div>
                 <div class="case-price">{{obj.price}} ฿</div>
             </div>
             <!-- quantity button -->
@@ -25,7 +25,7 @@
             </div>
             <div class="addtocart">
                 <div class="addtocart-container">
-                    <a href="#">เพิ่มลงตะกร้า</a>
+                    <a href="#" data-product-id={{obj.id}} data-product-slug={{obj.slug}} data-action="add" class="update-cart">เพิ่มลงตะกร้า</a>
                 </div>
             </div>
         </div>
@@ -62,5 +62,29 @@
         }
     }
 </script>
+<script tes>
+    var user = '{{request.user}}'
+</script>
+<script type="text/javascript">
+    var user = '{{request.user}}'
+
+    function getToken(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    var csrftoken = getToken('csrftoken');
+</script>
+<script src="{% static '/js/cart.js'%}"></script>
 
 {%endblock%}

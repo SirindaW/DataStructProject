@@ -10,6 +10,7 @@ urlpatterns = [
     path('',page.home_view,name = 'home'),
     path('cases/',include('product.urls')),
     path('account/',include('account.urls')),
+    path('cart/',include('cart.urls')),
 
     # path("cases/",page.cases_view),
     # path("collection/",page.collection_view),
@@ -19,6 +20,5 @@ urlpatterns = [
     path('signup/',page.signup_view),
     path('about/',page.about_view),
     path('profile/',page.profile_view),
-    path('cart/',page.cart_view)
 
 ]+ static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

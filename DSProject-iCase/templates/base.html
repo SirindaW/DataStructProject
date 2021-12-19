@@ -63,9 +63,13 @@
                         </div>
                         <div class="cart-list">
                             <div class="cartbtn">
+
+                                {% if request.user.is_authenticated %}
                                 <div class="cart-count-container">
-                                    <div class="cart-count">#</div>
+                                    <div class="cart-count"> x </div>
                                 </div>
+                                {% endif %}
+
                                 <a href="/cart"><img src="{%static '/images/cart.svg'%}" class="cart-image"></a>
                             </div>
                             <div class="dropdown-cart-content fade-menubar">

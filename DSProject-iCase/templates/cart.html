@@ -12,23 +12,30 @@
             </div>
             <div class="cartpage-cart-items">
                 <!-- cart item -->
+
+                {% for item in items %}
+
                 <div class="cartpage-items-row">
-                    <div class="cartpage-items-img"><img src="{%static '/images/product_imgs/CASE1.png'%}" class="cartpage-case-image"></div>
-                    <div class="cartpage-items-name-model">#name #model</div>
-                    <div class="cartpage-item-price"># ฿</div>
-                    <div class="cartpage-item-quantity">#</div>
-                    <div class="cartpage-subtotal-price"># ฿</div>
+                    <div class="cartpage-items-img">
+                        <a href="/cases/product/{{item.product.slug}}"><img src="{{item.product.image.url}}" class="cartpage-case-image"></a>
+                    </div>
+                    <div class="cartpage-items-name-model"><a href="/cases/product/{{item.product.slug}}">{{item.product.title}} | {{item.product.model}}</a></div>
+
+                    <div class="cartpage-item-price">{{item.product.price}}</div>
+                    <div class="cartpage-item-quantity">{{item.quantity}}</div>
+                    <div class="cartpage-subtotal-price">{{item.get_total}}</div>
                     <div class="cartpage-items-remove">
-                        <span class="cartpage-remove" onclick=""></span>
+                        <span class="cartpage-remove" data-product-slug={{item.product.slug}} data-action="remove"></span>
                     </div>
                 </div>
+                {%endfor%}
             </div>
             <div class="space-container">
                 <div class="space"></div>
                 <div class="cartpage-cart-checkout">
                     <div class="total-price-container">
                         <div class="total-price-title">ราคาทั้งหมด</div>
-                        <div class="total-price"># ฿</div>
+                        <div class="total-price">{{order.get_cart_total}}</div>
                     </div>
                     <div class="checkout-shop-btn">
                         <div class="button-shop">
@@ -43,5 +50,27 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    var user = '{{request.user}}'
+
+    function getToken(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    var csrftoken = getToken('csrftoken');
+</script>
+<script src="{%static '/js/cart.js'%}"></script>
 
 {%endblock%}

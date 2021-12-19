@@ -3,6 +3,7 @@ from .models import CollectionFeature, IphoneModel, Product
 from django.http import Http404,QueryDict
 from django.core.exceptions import ObjectDoesNotExist
 from DS.sorting import sort_by_price, sort_by_alphabet
+from django.http import JsonResponse
 
 
 # Create your views here.
