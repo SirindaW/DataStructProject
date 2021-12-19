@@ -14,9 +14,12 @@ def product_view(request):
     print("MODEL:",models)
     # for k in request.GET:
     #     print(request.GET.get('model'))
-        # print(k,request.GET[k])
+    #     print(k,request.GET[k])
     collections = QueryDict.getlist(request.GET,'collection')
     print("COLLECTION:",collections)
+
+    prices = QueryDict.getlist(request.GET,'price')
+    print("PRICE:",prices)
 
     # Title
     legend = 'iPhone เคส'

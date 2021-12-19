@@ -116,32 +116,32 @@
                         </form>
                     </div>
                 </div>
-                <div class="sidebar-price">
+                <!-- <div class="sidebar-price">
                     <div class="title">ราคา</div>
                     <div class="price-filter">
 
                         <div class="filter">
-                            <input type="checkbox" id=price0-100>
-                            <label for="collect-vangogh">0-100 ฿</label>
+                            <input type="checkbox" data-price-range='0-100' class="price-checkbox" id=price0-100>
+                            <label for="price0-100">0-100 ฿</label>
                         </div>
                         <div class="filter">
-                            <input type="checkbox" id=price101-200>
-                            <label for="collect-onepiece">101-200 ฿</label>
+                            <input type="checkbox" data-price-range='101-200' class="price-checkbox" id=price101-200>
+                            <label for="price101-200">101-200 ฿</label>
                         </div>
                         <div class="filter">
-                            <input type="checkbox" id=price201-300>
-                            <label for="collect-harry">201-300 ฿</label>
+                            <input type="checkbox" data-price-range='201-300' class="price-checkbox" id=price201-300>
+                            <label for="price201-300">201-300 ฿</label>
                         </div>
                         <div class="filter">
-                            <input type="checkbox" id=price301-400>
-                            <label for="collect-snoopy">301-400 ฿</label>
+                            <input type="checkbox" data-price-range='301-400' class="price-checkbox" id=price301-400>
+                            <label for="price301-400">301-400 ฿</label>
                         </div>
                         <div class="filter">
-                            <input type="checkbox" id=price401up>
-                            <label for="collect-pacman">> 401 ฿</label>
+                            <input type="checkbox" data-price-range='401up' class="price-checkbox" id=price401up>
+                            <label for="price401up">> 401 ฿</label>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="cases-product-showcase">
 
@@ -167,6 +167,7 @@
     </div>
 </div>
 <script src="{%static '/js/filter_query.js'%}"></script>
+<script src="{%static '/js/price_filter.js'%}"></script>
 <script>
     render_checkboxes_states(); // Restore the checkbox states from sessionStorage /* takes me ages to invent -tsphere.*/
 

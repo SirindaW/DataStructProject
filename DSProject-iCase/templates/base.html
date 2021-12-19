@@ -54,29 +54,38 @@
                         <div class="aboutus-list"><a href="/about">เกี่ยวกับเรา</a></div>
                     </div>
                     <div class="righttab">
-                        <div class="search-icon">
+                        <!-- <div class="search-icon">
                             <div class="search-icon-wrap"></div>
                             <div class="input">
                                 <input type="text" placeholder="ค้นหา" id="mysearch">
                             </div>
                             <span class="clear" onclick="document.getElementById( 'mysearch').value=''"></span>
+                        </div> -->
+
+                        <!-- login or profile page ###-->
+                        {% if request.user.is_authenticated %}
+                        <div class="profile-show-name"><a href="/account/profile">{{request.user.first_name}}</a></div>{% endif %}
+
+                        <div class="profile-icon">
+                            <a href="/account/profile"><img src="{%static '/images/profile.svg'%}" class="profile-image"></a>
                         </div>
+
                         <div class="cart-list">
                             <div class="cartbtn">
 
-                                {% if request.user.is_authenticated %}
+                                <!-- {% if request.user.is_authenticated %}
                                 <div class="cart-count-container">
                                     <div class="cart-count"> x </div>
                                 </div>
-                                {% endif %}
+                                {% endif %} -->
 
                                 <a href="/cart"><img src="{%static '/images/cart.svg'%}" class="cart-image"></a>
                             </div>
-                            <div class="dropdown-cart-content fade-menubar">
+                            <!-- <div class="dropdown-cart-content fade-menubar">
                                 <div class="cart-title">สินค้าในตะกร้าของคุณ</div>
                                 <div class="cart-bought">
                                     <div class="cart-items">
-                                        <!-- cart item -->
+                                        //cart item 
                                         <div class="items-img"><img src="{%static '/images/product_imgs/CASE1.png'%}" class="case-image"></div>
                                         <div class="items-details">
                                             <div class="items-name-model">#name #model</div>
@@ -96,16 +105,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
-                        <!-- login or profile page ###-->
-                        {% if request.user.is_authenticated %}
-                        <p>{{request.user.first_name}} {{request.user.last_name}}</p>{% endif %}
 
-                        <div class="profile-icon">
-                            <a href="/account/profile"><img src="{%static '/images/profile.svg'%}" class="profile-image"></a>
-                        </div>
 
                     </div>
                 </nav>
