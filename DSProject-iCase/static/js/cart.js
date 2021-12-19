@@ -11,6 +11,8 @@ for (var i = 0; i < updateBtns.length; i++) {
 
         if (user === "AnonymousUser") {
             console.log("USER IS NOT LOGGED IN");
+            window.location.replace('/account/login')
+
         } else {
             updateUserOrder(productSlug, quantity, action)
         }

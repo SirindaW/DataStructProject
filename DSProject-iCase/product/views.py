@@ -4,6 +4,7 @@ from django.http import Http404,QueryDict
 from django.core.exceptions import ObjectDoesNotExist
 from DS.sorting import sort_by_price, sort_by_alphabet
 from django.http import JsonResponse
+from DS.ProductStructure import ProductStructure
 
 
 # Create your views here.
@@ -26,6 +27,14 @@ def product_view(request):
 
     # Fetch data base
     allproducts = Product.objects.all()
+    # Convert to product structures
+    product_s = ProductStructure(allproducts)
+    print(len(product_s),'items in product_s')
+    for d in product_s:
+        print(d)
+
+    print(product_s.get_or_none(name=''))
+    
 
     # Model Filter
     if request.GET.get('model'):

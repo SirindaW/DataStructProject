@@ -21,9 +21,11 @@ def cart_view(request):
     else :
         return redirect('login_view')
 
+    print('items len',len(items))
     context = {
         'items':items,
         'order':order,
+        'cart_empty':len(items)<=0,
     }
     return render(request,'cart.html',context)
 

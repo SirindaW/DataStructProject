@@ -1,5 +1,5 @@
 def sort_by_price(data, reverse=False):
-
+    # QUICKSORT
     if len(data) <= 1:
         return data
     piv_pos = len(data)//2
@@ -35,7 +35,7 @@ def sort_by_price(data, reverse=False):
     return sort_by_price(left, reverse) + mid + sort_by_price(right, reverse)
 
 def sort_by_alphabet(data,reverse=False):
-    # Selection sort
+    # SELECTION SORT
     data = [d for d in data]
 
     # Find min
