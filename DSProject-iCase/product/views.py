@@ -79,16 +79,17 @@ def product_view(request):
         # check if k in list_of_collections
         for k in product_s:
             for c in list_of_collections:
-                if k.product.collection.is_collection(c):
-                    selected.add(k.product)
-                    break
+                if (k.product.collection):
+                    # if has collection
+                    if k.product.collection.is_collection(c):
+                        selected.add(k.product)
+                        break
         product_s = selected
         
 
     # Order options
     mode = {}
     if request.GET.get('order'):
-
         # sort by price
         if request.GET.get('order') == "price-asc":
             mode = dict.fromkeys(['price'],True)
@@ -149,8 +150,6 @@ def product_view(request):
 
 
 def product_collections_view(request):
-
-
     # Collection Filter
     if request.GET.get('collection-filter'):
         print('filtering')
@@ -178,7 +177,6 @@ def product_collections_view(request):
     # Order options
     mode = {}
     if request.GET.get('order'):
-
         # sort by price
         if request.GET.get('order') == "price-asc":
             mode = dict.fromkeys(['price'],True)

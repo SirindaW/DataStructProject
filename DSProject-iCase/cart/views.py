@@ -13,7 +13,10 @@ def cart_view(request):
     if request.user.is_authenticated:
         customer,created_customer = Customer.objects.get_or_create(user= request.user,first_name=request.user.first_name,last_name = request.user.last_name,email = request.user.email)
         order,created_order = Order.objects.get_or_create(customer= customer,complete = False)
+        
+        print("OK")
         items = order.orderitem_set.all() # access all order items in the order
+        print(items)
 
         for item in items:
             item.subtotal_price = round(item.product.price * item.quantity,2)

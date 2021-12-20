@@ -367,9 +367,11 @@ nav {
 /* search */
 
 .search-icon {
-    position: relative;
+    position: absolute;
     width: 40px;
     height: 40px;
+    top: 1.8%;
+    right: 8.2%;
     background: #fff;
     border-radius: 60px;
     transition: 0.5s;
@@ -733,6 +735,20 @@ nav {
 
 
 /* case product  */
+
+.case-page-body-product-container {
+    width: 80%;
+}
+
+.noitemfound {
+    height: 150px;
+    font-weight: 400;
+    font-size: 22px;
+    color: #3E3E3E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .cases-product-showcase {
     display: grid;

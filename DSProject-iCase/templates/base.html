@@ -42,25 +42,18 @@
                         <div class="collection-list">
                             <div class="dropbtn-collection"><a href="/cases/collection">คอลเลคชั่น</a></div>
                             <div class="dropdown-collection-content fade-menubar">
-                                <a href="#">Disney Princess</a>
-                                <a href="#">Basquiat</a>
-                                <a href="#">Squid Game</a>
-                                <a href="#">VEGEMITE</a>
-                                <a href="#">Stranger Things</a>
-                                <a href="#">HIKARI</a>
+                                <a href="/cases/collection/?collection-filter=disneyprincess">Disney Princess</a>
+                                <a href="/cases/collection/?collection-filter=basquiat">Basquiat</a>
+                                <a href="/cases/collection/?collection-filter=squidgame">Squid Game</a>
+                                <a href="/cases/collection/?collection-filter=vegemite">VEGEMITE</a>
+                                <a href="/cases/collection/?collection-filter=strangerthings">Stranger Things</a>
+                                <a href="/cases/collection/?collection-filter=hikari">HIKARI</a>
                                 <a class="see-all" href="/cases/collection">ดูทั้งหมด</a>
                             </div>
                         </div>
                         <div class="aboutus-list"><a href="/about">เกี่ยวกับเรา</a></div>
                     </div>
                     <div class="righttab">
-                        <div class="search-icon">
-                            <div class="search-icon-wrap"></div>
-                            <div class="input">
-                                <input type="text" placeholder="ค้นหา" id="mysearch">
-                            </div>
-                            <span class="clear" onclick="document.getElementById( 'mysearch').value=''"></span>
-                        </div>
 
                         <!-- login or profile page ###-->
                         {% if request.user.is_authenticated %}
@@ -109,6 +102,13 @@
                             </div> -->
                         </div>
 
+                        <div class="search-icon">
+                            <div class="search-icon-wrap"></div>
+                            <div class="input">
+                                <input type="text" placeholder="ค้นหา" id="mysearch">
+                            </div>
+                            <span class="clear" onclick="document.getElementById( 'mysearch').value=''"></span>
+                        </div>
 
 
                     </div>
