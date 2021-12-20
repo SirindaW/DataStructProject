@@ -38,18 +38,18 @@ function render_checkboxes_states() {
     }
 
     /* For price checkboxes */
-    storedPriceFilterState = JSON.parse(sessionStorage.priceCheckboxesStates)
-    if (storedPriceFilterState !== '') {
-        id = Object.keys(storedPriceFilterState)[0]
-        checkbox = document.getElementById(id)
-        checkbox.checked = true
-    } else {
-        price_checkboxes = document.getElementsByClassName('price-checkbox')
-        for (var i = 0; i < price_checkboxes.length; i++) {
-            price_checkboxes[i].checked = false
-        }
-        console.log('something')
-    }
+    // storedPriceFilterState = JSON.parse(sessionStorage.priceCheckboxesStates)
+    // if (storedPriceFilterState !== '') {
+    //     id = Object.keys(storedPriceFilterState)[0]
+    //     checkbox = document.getElementById(id)
+    //     checkbox.checked = true
+    // } else {
+    //     price_checkboxes = document.getElementsByClassName('price-checkbox')
+    //     for (var i = 0; i < price_checkboxes.length; i++) {
+    //         price_checkboxes[i].checked = false
+    //     }
+    //     console.log('something')
+    // }
 
 }
 
@@ -70,15 +70,15 @@ function clear_collection_checkboxes_states() {
     render_checkboxes_states()
 }
 
-function clear_price_checkboxes_states() {
-    sessionStorage.setItem('priceCheckboxesStates', JSON.stringify(''))
-    render_checkboxes_states()
-        // var price_checkboxes = document.getElementsByClassName('price-checkbox')
-        // for (var i = 0; i < price_checkboxes; i++) {
-        //     price_checkboxes[i].checked = false
-        //     console.log(price_checkboxes[i])
-        // }
-}
+// function clear_price_checkboxes_states() {
+//     sessionStorage.setItem('priceCheckboxesStates', JSON.stringify(''))
+//     render_checkboxes_states()
+//         // var price_checkboxes = document.getElementsByClassName('price-checkbox')
+//         // for (var i = 0; i < price_checkboxes; i++) {
+//         //     price_checkboxes[i].checked = false
+//         //     console.log(price_checkboxes[i])
+//         // }
+// }
 
 function clear_all_checkbox_filter() {
     clear_collection_checkboxes_states()
@@ -108,15 +108,15 @@ function query_filter_cases_href() {
     }
 
     /* price filter */
-    price_range = JSON.parse(sessionStorage.getItem('priceCheckboxesStates'))
-    params.delete('price');
-    console.log(price_range)
-    if (price_range !== '') {
-        console.log('obj', Object.keys(price_range)[0])
-        var key = Object.keys(price_range)[0]
-        var value = price_range[key]
-        params.append('price', value)
-    }
+    // price_range = JSON.parse(sessionStorage.getItem('priceCheckboxesStates'))
+    // params.delete('price');
+    // console.log(price_range)
+    // if (price_range !== '') {
+    //     console.log('obj', Object.keys(price_range)[0])
+    //     var key = Object.keys(price_range)[0]
+    //     var value = price_range[key]
+    //     params.append('price', value)
+    // }
 
 
     console.log(params.toString());

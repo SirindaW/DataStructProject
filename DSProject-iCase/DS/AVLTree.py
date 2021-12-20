@@ -271,6 +271,9 @@ class AVL:
 
     def __iter__(self):
         elements = self.in_order_traversal()
+        if elements is None:
+            # No elements
+            return
 
         for e in elements:
             yield e

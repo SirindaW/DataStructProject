@@ -54,17 +54,18 @@
                         <div class="aboutus-list"><a href="/about">เกี่ยวกับเรา</a></div>
                     </div>
                     <div class="righttab">
-                        <!-- <div class="search-icon">
+                        <div class="search-icon">
                             <div class="search-icon-wrap"></div>
                             <div class="input">
                                 <input type="text" placeholder="ค้นหา" id="mysearch">
                             </div>
                             <span class="clear" onclick="document.getElementById( 'mysearch').value=''"></span>
-                        </div> -->
+                        </div>
 
                         <!-- login or profile page ###-->
                         {% if request.user.is_authenticated %}
-                        <div class="profile-show-name"><a href="/account/profile">{{request.user.first_name}}</a></div>{% endif %}
+                        <div class="profile-show-name"><a href="/account/profile">{{request.user.first_name}}</a></div>
+                        {% endif %}
 
                         <div class="profile-icon">
                             <a href="/account/profile"><img src="{%static '/images/profile.svg'%}" class="profile-image"></a>
@@ -126,7 +127,8 @@
             input.addEventListener("keyup", function(event) {
                 if (event.keyCode === 13) {
                     event.preventDefault();
-                    alert("#");
+                    var q = input.value
+                    location.replace('/cases/?search=' + q)
                 }
             });
         </script>

@@ -26,23 +26,31 @@ def product_view(request):
     legend = 'iPhone เคส'
 
     # Fetch data base
-    allproducts = Product.objects.all()
+    products_db = Product.objects.all()
     # Convert to product structures
-    product_s = ProductStructure(allproducts)
-    print(len(product_s),'items in product_s')
-    for d in product_s:
-        print(d)
-
-    print(product_s.get_or_none(name=''))
-    
+    product_s = ProductStructure(products_db)
 
     # Model Filter
+    # if request.GET.get('model'):
+    #     selected = []
+    #     for k in allproducts:
+    #         if k.model.is_model(request.GET.get('model')):
+    #             selected.append(k)
+    #     allproducts = selected
+
+    #     # legend title
+    #     allmodels = IphoneModel.objects.all()
+    #     for m in allmodels:
+    #         if m.is_model(request.GET.get('model')):
+    #             legend = m.title
+
+    # Model Filter (New)
     if request.GET.get('model'):
-        selected = []
-        for k in allproducts:
-            if k.model.is_model(request.GET.get('model')):
-                selected.append(k)
-        allproducts = selected
+        selected = ProductStructure()
+        for k in product_s:
+            if k.product.model.is_model(request.GET.get('model')):
+                selected.add(k.product)
+        product_s = selected
 
         # legend title
         allmodels = IphoneModel.objects.all()
@@ -50,18 +58,31 @@ def product_view(request):
             if m.is_model(request.GET.get('model')):
                 legend = m.title
 
+
     # Collection Filter
+    # if request.GET.get('collection'):
+    #     selected = []
+    #     list_of_collections = QueryDict.getlist(request.GET,'collection')
+    #     # check if k in list_of_collections
+    #     for k in allproducts:
+    #         for c in list_of_collections:
+    #             if k.collection.is_collection(c):
+    #                 selected.append(k)
+    #                 break
+    #     allproducts=selected
+            
+
+    # Collection Filter (NEW)
     if request.GET.get('collection'):
-        selected = []
+        selected = ProductStructure()
         list_of_collections = QueryDict.getlist(request.GET,'collection')
         # check if k in list_of_collections
-        for k in allproducts:
+        for k in product_s:
             for c in list_of_collections:
-                if k.collection.is_collection(c):
-                    selected.append(k)
+                if k.product.collection.is_collection(c):
+                    selected.add(k.product)
                     break
-        allproducts=selected
-            
+        product_s = selected
         
 
     # Order options
@@ -72,25 +93,52 @@ def product_view(request):
         if request.GET.get('order') == "price-asc":
             mode = dict.fromkeys(['price'],True)
             rev = False
+            asc = True
         elif request.GET.get('order') == "price-desc":
             mode = dict.fromkeys(['price'],True)
             rev = True
+            asc = False
 
         # sort by alphabet 
         if request.GET.get('order') == "alpha-asc":
             mode = dict.fromkeys(['alpha'],True)
             mode.fromkeys(['alpha'])
             rev= False
+            asc=True
         elif request.GET.get('order') == "alpha-desc":
             mode = dict.fromkeys(['alpha'],True)
             mode.fromkeys(['alpha'])
             rev = True
+            asc=False
 
     if mode.get('price'):
-        allproducts = sort_by_price(allproducts,rev)
+        product_s = product_s.sort_by_price(asc)
+        # allproducts = [p.product for p in product_s.sort_by_price(asc)]
+        # allproducts = sort_by_price(allproducts,rev)
     elif mode.get('alpha'):
-        allproducts = sort_by_alphabet(allproducts,rev)
+        product_s = product_s.sort_by_alphabet(asc)
+        # allproducts = [p.product for p in product_s.sort_by_alphabet(asc)]
+        # allproducts = sort_by_alphabet(allproducts,rev)
 
+    # Search case
+    # HASH SEARCHING
+    if request.GET.get('search'):
+        key = request.GET.get('search')
+        ex_match = product_s.get_or_none(name=key)
+        if ex_match is not None:
+            product_id = ex_match.product.id
+
+            # BINARY SEARCH TREE (SEARCHING by id)
+            item = product_s.binary_search_id(product_id)
+            if item is not None:
+                product_s = [item]
+            else:
+                product_s = []
+        else:
+            # Not match any
+            product_s = []
+
+    allproducts = [p.product for p in product_s]
 
     context = {
         'legend_title': legend,
